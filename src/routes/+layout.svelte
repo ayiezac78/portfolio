@@ -26,7 +26,7 @@
 		<header>
 			<Header />
 		</header>
-		<main class="container mx-auto h-dvh">
+		<main class="container mx-auto min-h-screen">
 			<slot />
 		</main>
 		<footer class="footer footer-center p-10 bg-primary text-primary-content">
@@ -38,6 +38,13 @@
 <style>
 	:global(html) {
 		font-family: 'Space Grotesk', sans-serif;
+		height: 100%;
+	}
+	:global(body) {
+		display: grid;
+		grid-template-rows: 1fr auto; /* Header takes up one row, footer auto-sizes */
+		min-height: 100vh;
+		margin: 0;
 	}
 	:global(html[data-theme='light']) {
 		transition: linear color 0.3s;
@@ -55,5 +62,8 @@
 	:global(::-webkit-scrollbar-thumb) {
 		background: #333;
 		border-radius: 5px;
+	}
+	:global(footer) {
+		grid-row: 2; /* Place footer in the second row */
 	}
 </style>
