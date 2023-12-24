@@ -1,0 +1,61 @@
+:root {
+	/* Use this color as the background for your dark-on-light designs, or the text color of an inverted design. */
+	--light-shades: #efe9e3;
+	/* Accent colors can be used to bring attention to design elements by contrasting with the rest of the palette. */
+	--light-accent: #8285a5;
+	/* This color should be eye-catching but not harsh. It can be liberally applied to your layout as its main identity. */
+	--main-brand: #635d94;
+	/* Another accent color to consider. Not all colors have to be used - sometimes a simple color scheme works best. */
+	--dark-accent: #73748f;
+	/* Use as the text color for dark-on-light designs, or as the background for inverted designs. */
+	--dark-shades: #101029;
+}
+html {
+	font-family: 'Space Grotesk', sans-serif;
+	height: 100%;
+}
+body {
+	min-height: 100vh;
+}
+/* main) {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  min-height: 100vh;
+} */
+html[data-theme='light'] {
+	background-color: var(--light-shades);
+	transition: linear color 0.3s;
+	color: var(--dark-shades);
+
+	& nav.nav-div {
+		background-color: var(--light-shades);
+	}
+	& footer {
+		color: var(--light-shades);
+		background-color: var(--main-brand);
+	}
+}
+html[data-theme='dark'] {
+	color: var(--light-shades);
+	background-color: var(--dark-shades);
+	transition: linear color 0.3s;
+
+	& nav.nav-div {
+		background-color: var(--dark-shades);
+	}
+
+	& footer {
+		color: var(--light-shades);
+		background-color: var(--main-brand);
+	}
+}
+::-webkit-scrollbar {
+	width: 3px;
+}
+::-webkit-scrollbar-thumb {
+	background: #333;
+	border-radius: 5px;
+}
+footer {
+	grid-row: 2; /* Place footer in the second row */
+}

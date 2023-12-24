@@ -41,7 +41,7 @@
 	<a class="flex" href="/">
 		<Logo />
 	</a>
-	<div class="flex gap-3 nav-items">
+	<div class="flex gap-3 nav-items dark:text-neutral-50">
 		{#each navlinks as navlink (navlink)}
 			<a class="flex gap-1 hover:opacity-70" href={navlink.path}
 				><span>{@html navlink.logo}</span>{navlink.content}</a

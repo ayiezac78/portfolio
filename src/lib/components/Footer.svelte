@@ -27,8 +27,8 @@
 	<div class="flex gap-0">
 		<Logo />
 	</div>
-	<p class="font-bold">Code & designed by @yie</p>
-	<p>© Copyright 2023</p>
+	<p>designed & code by @yie</p>
+	<p>© {new Date().getFullYear()}</p>
 </aside>
 <nav>
 	<div class="grid grid-flow-col gap-4">
