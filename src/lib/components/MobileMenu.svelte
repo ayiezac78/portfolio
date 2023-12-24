@@ -74,7 +74,7 @@
 
 <ModeSwitcher />
 <details bind:this={details} class="dropdown dropdown-bottom dropdown-end">
-	<summary class="m-1 btn btn-outline btn-circle btn-sm border-0">
+	<summary class="m-1 btn btn-outline btn-circle btn-sm border-0 dark:text-[#f3f2f1] dark:bg-[rgba(0,0,0,0.1)]">
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
 			<path
 				fill-rule="evenodd"

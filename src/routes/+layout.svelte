@@ -29,27 +29,37 @@
 		<!-- <main class="container mx-auto min-h-screen"> -->
 		<slot />
 		<!-- </main> -->
-		<footer class="footer footer-center p-10 bg-primary text-primary-content">
+		<footer class="footer footer-center p-10 bg-[#383F44] text-primary-content">
 			<Footer />
 		</footer>
 	</div>
 {/if}
 
 <style>
+	:root {
+		--background-color: #F4F3F0;
+		--text-base-color: #383F44;
+		--main-brand-color: #9697A7;
+		--dark-accent-color: #96658A;
+		--element-color: #AC887B;
+	;
+	}
 	:global(html) {
 		font-family: 'Space Grotesk', sans-serif;
 		height: 100%;
 	}
 	:global(body) {
+		min-height: 100vh;
+	}
+	:global(main) {
 		display: grid;
 		grid-template-rows: 1fr auto; /* Header takes up one row, footer auto-sizes */
 		min-height: 100vh;
-		margin: 0;
 	}
 	:global(html[data-theme='light']) {
-		background-color: #f3f2f1;
+		background-color: var(--background-color);
 		transition: linear color 0.3s;
-		color: rgb(50, 75, 76);
+		color: var(--text-base-color);
 	}
 	:global(html[data-theme='dark']) {
 		color: #f6f6f6;
