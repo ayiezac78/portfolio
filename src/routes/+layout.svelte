@@ -26,9 +26,9 @@
 		<header>
 			<Header />
 		</header>
-		<main class="container mx-auto min-h-screen">
-			<slot />
-		</main>
+		<!-- <main class="container mx-auto min-h-screen"> -->
+		<slot />
+		<!-- </main> -->
 		<footer class="footer footer-center p-10 bg-primary text-primary-content">
 			<Footer />
 		</footer>
@@ -47,17 +47,17 @@
 		margin: 0;
 	}
 	:global(html[data-theme='light']) {
+		background-color: #f3f2f1;
 		transition: linear color 0.3s;
+		color: rgb(50, 75, 76);
 	}
 	:global(html[data-theme='dark']) {
+		color: #f6f6f6;
+		background-color: #454545;
 		transition: linear color 0.3s;
 	}
-	:global(main) {
-		display: grid;
-		place-content: center;
-	}
 	:global(::-webkit-scrollbar) {
-		width: 5px;
+		width: 3px;
 	}
 	:global(::-webkit-scrollbar-thumb) {
 		background: #333;
@@ -66,4 +66,10 @@
 	:global(footer) {
 		grid-row: 2; /* Place footer in the second row */
 	}
+
+	/* @media only screen and (max-width: 767px) {
+		:global(h1) {
+			font-size: 2rem;
+		}
+	} */
 </style>

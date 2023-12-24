@@ -3,7 +3,17 @@
 	import Seo from '../lib/Seo.svelte';
 </script>
 
-<h1 class=" font-extralight text-6xl">Welcome home</h1>
+<main class="container mx-auto min-h-screen grid place-content-center">
+	<section>
+		<div>
+			<span class="text-lg">Front-end Web Developer</span>
+		</div>
+		<h1 class="text-center font-extralight lg:text-6xl md:text-5xl text-5xl">Ariel Maniago</h1>
+		<div class="text-base">
+			'Where codes meets creativity'
+		</div>
+	</section>
+</main>
 
 <Seo
 	title="Ayie"
@@ -12,8 +22,6 @@
 	canonical = {$page.url.href}
 />
 
-<style lang="postcss">
-	:global(html) {
-		background-color: theme(colors.gray.100);
-	}
+<style>
+
 </style>

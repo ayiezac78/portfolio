@@ -9,6 +9,12 @@
 		details.removeAttribute('open');
 	};
 
+	const handleClickOutside = (e) => {
+		if (details && !details.contains(e.target)) {
+			closeDropdown();
+		}
+	};
+
 	onMount(() => {
 		// Add click event listeners to list items
 		const listItems = document.querySelectorAll('.dropdown-content li');
@@ -22,6 +28,13 @@
 			listItems.forEach((item) => {
 				item.removeEventListener('click', closeDropdown);
 			});
+		};
+	});
+
+	onMount(() => {
+		window.addEventListener('click', handleClickOutside);
+		return () => {
+			window.removeEventListener('click', handleClickOutside);
 		};
 	});
 
@@ -61,7 +74,7 @@
 
 <ModeSwitcher />
 <details bind:this={details} class="dropdown dropdown-bottom dropdown-end">
-	<summary class="m-1 btn">
+	<summary class="m-1 btn btn-outline btn-circle btn-sm border-0">
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
 			<path
 				fill-rule="evenodd"
@@ -78,8 +91,8 @@
 				>
 			</li>
 		{/each}
-		<hr />
-		<li class="pt-2">
+		<div class="divider my-0"></div>
+		<li>
 			<a class="flex justify-between" href="/about"
 				>About <span
 					><svg

@@ -30,6 +30,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@unpic/svelte": "^0.0.43",
 		"iconify-icon": "^1.0.8"
 	}
 }

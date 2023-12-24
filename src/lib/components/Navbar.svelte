@@ -43,13 +43,13 @@
 	</a>
 	<div class="flex gap-3 nav-items">
 		{#each navlinks as navlink (navlink)}
-			<a class="flex gap-1" href={navlink.path}
+			<a class="flex gap-1 hover:opacity-70 hover:transition ease-linear" href={navlink.path}
 				><span>{@html navlink.logo}</span>{navlink.content}</a
 			>
 		{/each}
 	</div>
 	<div class="flex gap-3 nav-items">
-		<a href="/about">
+		<a class="tooltip tooltip-left" data-tip="About me" href="/about">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				fill="none"
