@@ -1,15 +1,15 @@
 <script>
 	import { page } from '$app/stores';
 	import Seo from '../lib/Seo.svelte';
-	import FeaturedPortfolio from '../lib/components/homepage/FeaturedPortfolio.svelte';
-	import Introduction from '../lib/components/homepage/Introduction.svelte';
+	import FeaturedPortfolio from '$lib/components/homepage/FeaturedPortfolio.svelte';
+	import Introduction from '$lib/components/homepage/Introduction.svelte';
 </script>
 
-<main class="mt-14 container grid gap-32">
-	<section class="grid place-content-center min-h-[30vh]">
+<main class="container mx-auto grid gap-32">
+	<section class="grid place-content-center relative h-screen snap-start">
 		<Introduction />
 	</section>
-	<section id="featured" class="grid place-content-center py-4">
+	<section id="featured" class="grid place-content-center py-4 h-screen snap-start">
 		<FeaturedPortfolio />
 	</section>
 </main>

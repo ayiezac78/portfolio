@@ -86,25 +86,25 @@
 	];
 </script>
 
-<div class="flex flex-wrap gap-4">
-  {#each cardContents as cardContent (cardContent)}
-    <div class="card-container">
-      <div class="card w-80 bg-[#8285a5] shadow-xl rounded-sm">
-        <div class="card-body p-4">
-          <h2 class="card-title">{cardContent.title}</h2>
-          <small>{cardContent.paragraph}</small>
-          <div class="card-actions justify-start items-center gap-0">
-            <a href={cardContent.github.link}>
-              {@html cardContent.github.logo}
-            </a>
-            {#if cardContent.title !== 'Portfolio'}
-              <a href={cardContent.proj.link}>{@html cardContent.proj.logo}</a>
-            {/if}
-          </div>
-        </div>
-      </div>
-    </div>
-  {/each}
+<div class="flex flex-wrap gap-4" id="portfolio">
+	{#each cardContents as cardContent (cardContent)}
+		<div class="card-container">
+			<div class="card w-72 bg-[#8285a5] shadow-xl rounded-sm">
+				<div class="card-body p-4">
+					<h2 class="card-title">{cardContent.title}</h2>
+					<small>{cardContent.paragraph}</small>
+					<div class="card-actions justify-start items-center gap-0">
+						<a href={cardContent.github.link}>
+							{@html cardContent.github.logo}
+						</a>
+						{#if cardContent.title !== 'Portfolio'}
+							<a href={cardContent.proj.link}>{@html cardContent.proj.logo}</a>
+						{/if}
+					</div>
+				</div>
+			</div>
+		</div>
+	{/each}
 </div>
 
 <style>

@@ -5,9 +5,7 @@
 	stroke-width="1.5"
 	stroke="currentColor"
 	data-slot="icon"
-	class="w-10 h-10"
-	width="10"
-	height="10"
+	class="w-8 h-8"
 >
 	<path
 		stroke-linecap="round"
@@ -16,4 +14,4 @@
 		class="svg-elem-1"
 	></path>
 </svg>
-<span class=" text-3xl">yie</span>
+<span class=" text-2xl">yie</span>

@@ -4,7 +4,7 @@
 	import LoadingSplashScreen from './../lib/components/LoadingSplashScreen.svelte';
 	import Footer from './../lib/components/Footer.svelte';
 	import '../app.css';
-	import '../stylesheet/global.css'
+	import '../stylesheet/global.css';
 	import Header from '../lib/components/Header.svelte';
 	import { onMount } from 'svelte';
 
@@ -24,7 +24,7 @@
 	<LoadingSplashScreen />
 {:else}
 	<div class="flex flex-col min-w-full" in:fade={{ delay: 550 }}>
-		<header class="mb-[4.5rem]">
+		<header>
 			<Header />
 		</header>
 		<slot />
