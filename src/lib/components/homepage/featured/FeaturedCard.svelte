@@ -4,7 +4,7 @@
 			title: 'Portfolio',
 			paragraph: "What you see is now you've seen 😅✌🏽",
 			github: {
-				link: '',
+				link: 'https://github.com/ayiezac78/portfolio',
 				logo: `<svg
 								xmlns="http://www.w3.org/2000/svg"
 								width="16"
@@ -86,19 +86,22 @@
 	];
 </script>
 
-<div class="flex flex-wrap gap-4" id="portfolio">
+<div
+	class="flex flex-wrap xl:justify-start lg:justify-center md:justify-center gap-4"
+	id="portfolio"
+>
 	{#each cardContents as cardContent (cardContent)}
 		<div class="card-container">
-			<div class="card w-72 bg-[#8285a5] shadow-xl rounded-sm">
+			<div class="card w-72 shadow-xl rounded-sm">
 				<div class="card-body p-4">
 					<h2 class="card-title">{cardContent.title}</h2>
 					<small>{cardContent.paragraph}</small>
 					<div class="card-actions justify-start items-center gap-0">
-						<a href={cardContent.github.link}>
+						<a target="_blank" href={cardContent.github.link}>
 							{@html cardContent.github.logo}
 						</a>
 						{#if cardContent.title !== 'Portfolio'}
-							<a href={cardContent.proj.link}>{@html cardContent.proj.logo}</a>
+							<a target="_blank" href={cardContent.proj.link}>{@html cardContent.proj.logo}</a>
 						{/if}
 					</div>
 				</div>

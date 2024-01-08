@@ -28,7 +28,7 @@ body {
 	min-height: 100vh;
 }
 html[data-theme='light'] {
-	background-color: var(--light-shades);
+	background-color: #d3e8ce;
 	transition: linear color 0.3s;
 	color: var(--dark-shades);
 	& footer {
@@ -56,6 +56,18 @@ html[data-theme='dark'] {
 	--border: 12 6.5% 15.1%;
 	--input: 12 6.5% 15.1%;
 	--ring: 20.5 90.2% 48.2%;
+
+	.card-body {
+		.card-title {
+			color: #d3d3d3;
+		}
+		& small {
+			color: #d3d3d3;
+		}
+		& .card-actions a {
+			color: #d3d3d3;
+		}
+	}
 }
 ::-webkit-scrollbar {
 	width: 3px;
