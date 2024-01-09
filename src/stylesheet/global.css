@@ -29,7 +29,7 @@ body {
 }
 html[data-theme='light'] {
 	background-color: #d3e8ce;
-	transition: linear color 0.3s;
+	transition: ease-in-out 0.3s;
 	color: var(--dark-shades);
 	& footer {
 		color: var(--light-shades);
@@ -57,6 +57,7 @@ html[data-theme='dark'] {
 	--input: 12 6.5% 15.1%;
 	--ring: 20.5 90.2% 48.2%;
 
+	transition: ease-in-out 0.3s;
 	.card-body {
 		.card-title {
 			color: #d3d3d3;

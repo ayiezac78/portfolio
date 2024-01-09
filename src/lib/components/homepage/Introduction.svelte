@@ -22,10 +22,13 @@
 </script>
 
 <span class="text-lg text-start">Front-end Web Developer</span>
-<h1 class="text-center font-extralight lg:text-7xl md:text-5xl text-5xl">
+<h1 class="text-center font-light lg:text-8xl md:text-6xl text-6xl">
 	Ariel Maniago<span class="blinking-cursor" />
 </h1>
-<div class="text-base text-start">'Where codes meets creativity'</div>
+<div class="text-base text-start">
+	'Where <kbd class="kbd-sm">codes</kbd> meets
+	<span class="bg-[#8285a5] text-sm px-1">creativity</span>'
+</div>
 <nav class="py-3">
 	<div class="flex items-center gap-4">
 		{#each socialFooterLinks as socialFooterLink (socialFooterLink)}

@@ -2,15 +2,16 @@
 	import { page } from '$app/stores';
 	import { fade } from 'svelte/transition';
 	import Seo from '../Seo.svelte';
-	import { onMount, afterUpdate } from 'svelte';
+	import { browser } from '$app/environment';
+	import { afterUpdate } from 'svelte';
 
-	let darkmode = true;
+	let darkmode;
 
 	afterUpdate(() => {
 		document.documentElement.setAttribute('data-theme', darkmode ? 'dark' : 'light');
 	});
 
-	onMount(() => {
+	if (browser) {
 		const storedTheme = localStorage.getItem('theme');
 		const isDarkTheme =
 			storedTheme === 'dark' ||
@@ -18,7 +19,7 @@
 
 		document.documentElement.setAttribute('data-theme', isDarkTheme ? 'dark' : 'light');
 		darkmode = isDarkTheme;
-	});
+	}
 </script>
 
 <div

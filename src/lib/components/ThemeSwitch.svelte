@@ -1,6 +1,6 @@
 <script>
 	import { browser } from '$app/environment';
-	import { afterUpdate, onMount } from 'svelte';
+	import { afterUpdate } from 'svelte';
 
 	let darkmode;
 

@@ -10,6 +10,16 @@
 			href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap"
 			rel="stylesheet"
 		/>
+		<script>
+			const storedTheme = localStorage.getItem('theme');
+			const isDarkTheme =
+				storedTheme === 'dark' ||
+				(!storedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+			document.documentElement.setAttribute('data-theme', isDarkTheme ? 'dark' : 'light');
+			darkmode = isDarkTheme;
+		</script>
+
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">
