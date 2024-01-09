@@ -5,14 +5,13 @@
 	import Introduction from '$lib/components/homepage/Introduction.svelte';
 </script>
 
-<main class="container mx-auto grid gap-32">
-	<section class="grid place-content-center relative h-screen snap-start">
-		<Introduction />
-	</section>
-	<section id="featured" class="grid place-content-center py-4 h-screen snap-start">
-		<FeaturedPortfolio />
-	</section>
-</main>
+<section class="grid place-content-center relative h-screen snap-start">
+	<Introduction />
+</section>
+<section id="featured" class="grid place-content-center h-screen snap-start">
+	<FeaturedPortfolio />
+</section>
+
 <Seo
 	title="Ayie"
 	description="Showcasing my portfolio, personality, career, and also daily life journal"

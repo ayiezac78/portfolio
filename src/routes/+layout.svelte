@@ -27,7 +27,9 @@
 		<header>
 			<Header />
 		</header>
-		<slot />
+		<main class="container mx-auto grid">
+			<slot />
+		</main>
 		<footer class="footer footer-center p-4">
 			<Footer />
 		</footer>
