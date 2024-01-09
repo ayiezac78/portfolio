@@ -4,21 +4,14 @@
 	import Seo from '../Seo.svelte';
 	import { browser } from '$app/environment';
 	import { afterUpdate } from 'svelte';
-
-	let darkmode;
+	import { updateAfter, onBrowser } from '../darkmode.js';
 
 	afterUpdate(() => {
-		document.documentElement.setAttribute('data-theme', darkmode ? 'dark' : 'light');
+		updateAfter();
 	});
 
 	if (browser) {
-		const storedTheme = localStorage.getItem('theme');
-		const isDarkTheme =
-			storedTheme === 'dark' ||
-			(!storedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches);
-
-		document.documentElement.setAttribute('data-theme', isDarkTheme ? 'dark' : 'light');
-		darkmode = isDarkTheme;
+		onBrowser();
 	}
 </script>
 

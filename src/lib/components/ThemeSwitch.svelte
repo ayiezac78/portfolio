@@ -1,27 +1,22 @@
 <script>
 	import { browser } from '$app/environment';
 	import { afterUpdate } from 'svelte';
-
-	let darkmode;
+	import { darkmode, updateAfter, onBrowser } from '../darkmode.js';
 
 	function handleSwitchDarkMode() {
-		darkmode = !darkmode;
+		$darkmode = !$darkmode;
 
-		localStorage.setItem('theme', darkmode ? 'dark' : 'light');
+		localStorage.setItem('theme', $darkmode ? 'dark' : 'light');
+
+		if ($darkmode) {
+			updateAfter();
+		}
 	}
 
-	afterUpdate(() => {
-		document.documentElement.setAttribute('data-theme', darkmode ? 'dark' : 'light');
-	});
+	afterUpdate(updateAfter);
 
 	if (browser) {
-		const storedTheme = localStorage.getItem('theme');
-		const isDarkTheme =
-			storedTheme === 'dark' ||
-			(!storedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches);
-
-		document.documentElement.setAttribute('data-theme', isDarkTheme ? 'dark' : 'light');
-		darkmode = isDarkTheme;
+		onBrowser();
 	}
 </script>
 
@@ -30,7 +25,7 @@
 		class="theme-controller"
 		type="checkbox"
 		id="theme-toggle"
-		checked={darkmode}
+		checked={$darkmode}
 		on:change={handleSwitchDarkMode}
 	/>
 
