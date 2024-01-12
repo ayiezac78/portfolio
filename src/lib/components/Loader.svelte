@@ -21,13 +21,14 @@
 	});
 </script>
 
-<div class="progress-bar lg:top-[8.5%] md:top-[8.9%] top-[10%]">
+<div class="progress-bar z-20">
 	<div class="progress-sliver" style={`--width: ${$progress * 100}%`} />
 </div>
 
 <style>
 	.progress-bar {
 		position: fixed;
+		top: 0;
 		left: 0;
 		right: 0;
 		height: 0.5rem;

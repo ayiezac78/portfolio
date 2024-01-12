@@ -38,14 +38,14 @@
 	<div class="flex flex-col min-w-full" in:fade={{ delay: 550 }}>
 		<header>
 			<nav class="fixed top-0 z-10 w-full m-0 p-4 shadow-sm nav-div backdrop-blur">
+				{#if $navigationState === 'loading'}
+					<div out:fade={{ delay: 500 }}>
+						<Loader />
+					</div>
+				{/if}
 				<Navbar />
 			</nav>
 		</header>
-		{#if $navigationState === 'loading'}
-			<div out:fade={{ delay: 500 }}>
-				<Loader />
-			</div>
-		{/if}
 		<main class="container mx-auto grid">
 			{#key data.pathname}
 				<div
