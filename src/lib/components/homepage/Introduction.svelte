@@ -23,11 +23,14 @@
 
 <span class="text-lg text-start">Front-end Web Developer</span>
 <h1 class="text-center font-light lg:text-8xl md:text-6xl text-5xl">
-	Ariel Maniago<span class="blinking-cursor" />
+	Ariel <span class="text-[#df4a1b]">Maniago</span><span class="blinking-cursor" />
 </h1>
 <div class="text-base text-start">
-	'Where <span class="inline-flex text-sm"><span> {'<'} </span> codes <span>{'/>'}</span></span> meets
-	creativity'
+	'Where <span class="inline-flex text-sm font-bold"
+		><span> {'<'} </span> codes <span class="text-[#df4a1b]">{'/'}</span><span>{'>'}</span></span
+	>
+	meets
+	<span class="text-[#df4a1b]">creativity</span>'
 </div>
 <nav class="py-3">
 	<div class="flex items-center gap-4">
@@ -42,15 +45,11 @@
 			xmlns="http://www.w3.org/2000/svg"
 			fill="none"
 			viewBox="0 0 24 24"
-			stroke-width="1.5"
-			stroke="currentColor"
+			stroke-width="3"
+			stroke="#df4a1b"
 			class="w-6 h-6"
 		>
-			<path
-				stroke-linecap="round"
-				stroke-linejoin="round"
-				d="m4.5 5.25 7.5 7.5 7.5-7.5m-15 6 7.5 7.5 7.5-7.5"
-			/>
+			<path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
 		</svg>
 	</a>
 </div>
@@ -62,7 +61,7 @@
 		width: 4px;
 		height: 3.5rem;
 		transition: linear 0.3s;
-		background-color: #635d94;
+		background-color: #df4a1b;
 	}
 
 	@media only screen and (max-width: 991px) {

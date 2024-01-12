@@ -4,7 +4,7 @@
 	import Seo from '../Seo.svelte';
 	import { browser } from '$app/environment';
 	import { afterUpdate } from 'svelte';
-	import { updateAfter, onBrowser } from '../darkmode.js';
+	import { updateAfter, onBrowser } from '../../store/darkmode.js';
 
 	afterUpdate(() => {
 		updateAfter();
@@ -24,7 +24,7 @@
 		fill="none"
 		viewBox="0 0 24 24"
 		stroke-width="1.5"
-		stroke="currentColor"
+		stroke="#df4a1b"
 		data-slot="icon"
 		class="w-24 h-24"
 		width="24"

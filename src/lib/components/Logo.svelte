@@ -2,8 +2,8 @@
 	xmlns="http://www.w3.org/2000/svg"
 	fill="none"
 	viewBox="0 0 24 24"
-	stroke-width="1.5"
-	stroke="currentColor"
+	stroke-width="2"
+	stroke="#df4a1b"
 	data-slot="icon"
 	class="w-8 h-8"
 >
@@ -14,4 +14,4 @@
 		class="svg-elem-1"
 	></path>
 </svg>
-<span class=" text-2xl">yie</span>
+<!-- <span class="font-semibold text-2xl text-[#e3403c]">yie</span> -->

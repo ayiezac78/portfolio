@@ -1,4 +1,5 @@
 <script>
+	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
 	import { navlinks } from '../navLinks.js';
 
@@ -37,6 +38,8 @@
 			window.removeEventListener('click', handleClickOutside);
 		};
 	});
+
+	$: routeId = $page.route.id;
 </script>
 
 <details bind:this={details} class="dropdown dropdown-bottom dropdown-end mobile-menu">
@@ -54,8 +57,10 @@
 	<ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
 		{#each navlinks as navlink (navlink)}
 			<li>
-				<a class="flex justify-between" href={navlink.path}
-					><span>{@html navlink.logo}</span> {navlink.content}</a
+				<a
+					class:active-details={routeId == navlink.path}
+					class="flex justify-between"
+					href={navlink.path}><span>{@html navlink.logo}</span> {navlink.content}</a
 				>
 			</li>
 		{/each}

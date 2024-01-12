@@ -1,8 +1,12 @@
 <script>
-	import Logo from './Logo.svelte';
-	import ThemeSwitch from './ThemeSwitch.svelte';
-	import MobileMenu from './MobileMenu.svelte';
-	import { navlinks } from '../navLinks.js';
+	// import NavLinks from './NavLinks.svelte';
+	import { page } from '$app/stores';
+	import Logo from '$lib/components/Logo.svelte';
+	import ThemeSwitch from '$lib/components/ThemeSwitch.svelte';
+	import MobileMenu from '$lib/components/MobileMenu.svelte';
+	import { navlinks } from '$lib/navLinks.js';
+
+	$: routeId = $page.route.id;
 </script>
 
 <div class="flex place-items-center justify-between">
@@ -11,8 +15,10 @@
 	</a>
 	<div class="flex gap-3 nav-items dark:text-neutral-50">
 		{#each navlinks as navlink (navlink)}
-			<a class="flex gap-1 hover:opacity-70" href={navlink.path}
-				><span>{@html navlink.logo}</span>{navlink.content}</a
+			<a
+				class:active={routeId == navlink.path}
+				class="flex gap-1 hover:text-[#df4a1b] transition-all"
+				href={navlink.path}><span>{@html navlink.logo}</span>{navlink.content}</a
 			>
 		{/each}
 	</div>
@@ -40,8 +46,8 @@
 
 <style>
 	@media only screen and (max-width: 767px) {
-		.nav-items,
-		.about-me {
+		.about-me,
+		.nav-items {
 			display: none;
 		}
 	}
