@@ -1,7 +1,7 @@
 :root {
 	--primary: #e2e5e0;
-	--secondary: #241c20;
-	--accent: #df4a1b;
+	--secondary: #53514a;
+	--accent: #fc5445;
 	--background: var(--primary);
 	--foreground: 20 14.3% 4.1%;
 	--card: 0 0% 100%;
@@ -29,6 +29,10 @@ html {
 }
 body {
 	min-height: 100vh;
+
+	& p {
+		font-family: 'Sitka Small', serif;
+	}
 }
 html[data-theme='light'] {
 	background-color: var(--background);
@@ -41,6 +45,7 @@ html[data-theme='light'] {
 	}
 }
 html[data-theme='dark'] {
+	background-color: var(--secondary);
 	transition: ease-in-out 0.3s;
 
 	& a.active {

@@ -3,7 +3,7 @@
 	fill="none"
 	viewBox="0 0 24 24"
 	stroke-width="2"
-	stroke="#df4a1b"
+	stroke="#fc5445"
 	data-slot="icon"
 	class="w-8 h-8"
 >

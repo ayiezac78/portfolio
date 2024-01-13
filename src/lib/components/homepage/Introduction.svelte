@@ -23,14 +23,14 @@
 
 <span class="text-lg text-start">Front-end Web Developer</span>
 <h1 class="text-center font-light lg:text-8xl md:text-6xl text-5xl">
-	Ariel <span class="text-[#df4a1b]">Maniago</span><span class="blinking-cursor" />
+	Ariel <span class="text-[#fc5445]">Maniago</span><span class="blinking-cursor" />
 </h1>
 <div class="text-base text-start">
 	'Where <span class="inline-flex text-sm font-bold"
-		><span> {'<'} </span> codes <span class="text-[#df4a1b]">{'/'}</span><span>{'>'}</span></span
+		><span> {'<'} </span> codes <span class="text-[#fc5445]">{'/'}</span><span>{'>'}</span></span
 	>
 	meets
-	<span class="text-[#df4a1b]">creativity</span>'
+	<span class="text-[#fc5445]">creativity</span>'
 </div>
 <nav class="py-3">
 	<div class="flex items-center gap-4">
@@ -46,7 +46,7 @@
 			fill="none"
 			viewBox="0 0 24 24"
 			stroke-width="3"
-			stroke="#df4a1b"
+			stroke="#fc5445"
 			class="w-6 h-6"
 		>
 			<path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
@@ -61,7 +61,7 @@
 		width: 4px;
 		height: 3.5rem;
 		transition: linear 0.3s;
-		background-color: #df4a1b;
+		background-color: #fc5445;
 	}
 
 	@media only screen and (max-width: 991px) {

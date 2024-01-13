@@ -24,7 +24,7 @@
 		fill="none"
 		viewBox="0 0 24 24"
 		stroke-width="1.5"
-		stroke="#df4a1b"
+		stroke="#fc5445"
 		data-slot="icon"
 		class="w-24 h-24"
 		width="24"

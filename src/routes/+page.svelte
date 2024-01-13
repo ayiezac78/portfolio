@@ -5,15 +5,15 @@
 	import Introduction from '$lib/components/homepage/Introduction.svelte';
 </script>
 
-<section class="grid place-content-center relative h-screen snap-start">
+<section class="grid place-content-center relative min-h-screen snap-start">
 	<Introduction />
 </section>
-<section id="featured" class="grid place-content-center h-screen snap-start">
+<section id="featured" class="grid place-content-center min-h-screen snap-start">
 	<FeaturedPortfolio />
 </section>
 
 <Seo
-	title="Ayie"
+	title="@yie"
 	description="Showcasing my portfolio, personality, career, and also daily life journal"
 	keywords="portfolio, ayie portfolio, life journal, career "
 	canonical={$page.url.href}

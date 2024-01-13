@@ -46,7 +46,7 @@
 				<Navbar />
 			</nav>
 		</header>
-		<main class="container mx-auto grid">
+		<main class="container mx-auto grid min-w-full">
 			{#key data.pathname}
 				<div
 					in:fade={{ easing: cubicOut, duration: 300, delay: 400 }}
