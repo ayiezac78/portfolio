@@ -10,6 +10,9 @@
 </section>
 <section id="featured" class="grid place-content-center min-h-screen snap-start">
 	<FeaturedPortfolio />
+	<span class="text-center"
+		><a class="btn button btn-sm rounded-full" href="/portfolio">See More</a></span
+	>
 </section>
 
 <Seo

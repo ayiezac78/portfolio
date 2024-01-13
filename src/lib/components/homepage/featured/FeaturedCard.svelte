@@ -7,10 +7,10 @@
 	{#each cardContents as cardContent (cardContent)}
 		<li class="cards__item">
 			<a target="_blank" href={cardContent.proj.link}>
-				<div class="card shadow-sm hover:shadow-lg h-full">
+				<div class="card shadow hover:shadow-lg h-full">
 					<Image src={cardContent.img} layout="constrained" width={600} height={400} />
 					<div class="card__content">
-						<div class="card-title uppercase">
+						<div class="card-title uppercase text-[#3d3d3d]">
 							{cardContent.title}
 						</div>
 						<p class="card__text">
@@ -25,6 +25,7 @@
 									{@html cardContent.madeWith.svelteLogo}
 									{@html cardContent.madeWith.htmlLogo}
 									{@html cardContent.madeWith.cssLogo}
+									{@html cardContent.madeWith.daisyuiLogo}
 									{@html cardContent.madeWith.tailwindCssLogo}
 									{@html cardContent.madeWith.jsLogo}
 								{/if}
@@ -73,7 +74,7 @@
 		}
 	}
 	.card {
-		background-color: #f6f7f6;
+		background-color: #efefef;
 		border-radius: 0.25rem;
 		display: flex;
 		flex-direction: column;
@@ -97,5 +98,6 @@
 		font-size: 0.875rem;
 		line-height: 1.5;
 		margin-bottom: 1.25rem;
+		color: #3d3d3d;
 	}
 </style>

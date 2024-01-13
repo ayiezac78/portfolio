@@ -24,7 +24,12 @@
 	</div>
 	<div class="flex items-center gap-2">
 		<ThemeSwitch />
-		<a class="tooltip tooltip-left about-me" data-tip="About me" href="/about">
+		<a
+			class:active={routeId == '/about'}
+			class="tooltip tooltip-left about-me"
+			data-tip="About me"
+			href="/about"
+		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				fill="none"

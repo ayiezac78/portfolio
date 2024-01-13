@@ -5,17 +5,23 @@
 	import Seo from '$lib/Seo.svelte';
 </script>
 
-<section class="grid place-content-center relative min-h-screen snap-start lg:mt-8 mt-24">
-	<h1 class=" font-extralight text-6xl mb-5 lg:px-14 px-6">Portfolio</h1>
+<section class="grid place-content-center min-h-screen lg:mt-8 mt-20">
+	<h1 class=" font-extralight text-5xl mb-5 lg:px-14 px-6">Portfolio</h1>
 
 	<div class="band">
 		{#each cardContents as cardContent (cardContent.title)}
 			<div class={`cardContent ${cardContent.uniqueClass}`}>
 				<a href={cardContent.proj.link} class="card">
-					<Image src={cardContent.img} layout="constrained" width={600} height={400} />
+					<Image
+						src={cardContent.img}
+						layout="constrained"
+						width={600}
+						height={400}
+						class="rounded-t-xl"
+					/>
 					<article>
-						<h2>{cardContent.title}</h2>
-						<p>{cardContent.paragraph}</p>
+						<h2 class="uppercase font-bold">{cardContent.title}</h2>
+						<p><small>{cardContent.paragraph}</small></p>
 						<div class="card-actions justify-between items-center gap-0 mt-5">
 							<a target="_blank" href={cardContent.github.link}>
 								{@html cardContent.github.logo}

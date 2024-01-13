@@ -39,6 +39,30 @@ html[data-theme='light'] {
 	transition: ease-in-out 0.3s;
 	color: var(--text-dark);
 
+	& .button-cta {
+		background-color: var(--accent);
+		border: none;
+		color: var(--primary);
+
+		&:hover {
+			background-color: transparent;
+			color: var(--accent);
+			outline: solid 1px var(--accent);
+		}
+	}
+
+	& .button {
+		background-color: transparent;
+		color: var(--secondary);
+		border: none;
+		outline: 1px solid var(--secondary);
+
+		&:hover {
+			background-color: var(--secondary);
+			color: var(--primary);
+		}
+	}
+
 	& footer {
 		color: var(--light-shades);
 		background-color: var(--main-brand);
@@ -50,6 +74,30 @@ html[data-theme='dark'] {
 
 	& a.active {
 		color: var(--text-accent-color);
+	}
+
+	& .button-cta {
+		background-color: var(--accent);
+		border: none;
+		color: var(--primary);
+
+		&:hover {
+			background-color: transparent;
+			color: var(--primary);
+			outline: solid 1px var(--primary);
+		}
+	}
+
+	& .button {
+		background-color: transparent;
+		color: var(--primary);
+		border: none;
+		outline: 1px solid var(--primary);
+
+		&:hover {
+			background-color: var(--primary);
+			color: #030303;
+		}
 	}
 	.card-body {
 		.card-title {
@@ -65,9 +113,13 @@ html[data-theme='dark'] {
 }
 ::-webkit-scrollbar {
 	width: 3px;
+
+	&:hover {
+		width: 5px;
+	}
 }
 ::-webkit-scrollbar-thumb {
-	background: #333;
+	background: var(--accent);
 	border-radius: 5px;
 }
 

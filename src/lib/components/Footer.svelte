@@ -6,6 +6,6 @@
 	<div class="flex gap-0">
 		<Logo />
 	</div>
-	<p>designed & code by @yie</p>
-	<p>© {new Date().getFullYear()}</p>
+	<span>designed & code by @yie</span>
+	<span>© {new Date().getFullYear()}</span>
 </aside>
