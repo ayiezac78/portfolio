@@ -14,9 +14,9 @@
 					<Image
 						src={profileImg}
 						layout="constrained"
-						width={200}
-						height={200}
-						class="rounded-full grayscale"
+						width={150}
+						height={150}
+						class="rounded-full outline outline-[#fc5445]"
 					/>
 				</div>
 				<h1 class="text-5xl font-bold">Hi, I'm Ayie</h1>

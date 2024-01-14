@@ -66,7 +66,7 @@
 		{/each}
 		<div class="divider my-0"></div>
 		<li>
-			<a class="flex justify-between" href="/about"
+			<a class:active-details={routeId == '/about'} class="flex justify-between" href="/about"
 				>About <span
 					><svg
 						xmlns="http://www.w3.org/2000/svg"

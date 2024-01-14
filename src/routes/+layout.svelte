@@ -8,11 +8,12 @@
 	import { onMount } from 'svelte';
 	import Navbar from './Navbar.svelte';
 	import { cubicIn, cubicOut } from 'svelte/easing';
-	import { isLoading } from '../store/loading.js';
+	// import { isLoading } from '../store/loading.js';
 	import { beforeNavigate, afterNavigate } from '$app/navigation';
 	import navigationState from '../store/navigationState.ts';
 
 	export let data;
+	let isPageLoad = true;
 
 	beforeNavigate(() => {
 		$navigationState = `loading`;
@@ -21,18 +22,14 @@
 		$navigationState = 'loaded';
 	});
 
-	onMount(() => {
-		isLoading.set(true);
-		const timeout = setTimeout(() => {
-			isLoading.set(false);
-		}, 3000);
-		return () => {
-			clearTimeout(timeout);
-		};
+	onMount(async () => {
+		// Simulate an asynchronous operation
+		await new Promise((resolve) => setTimeout(resolve, 3000));
+		isPageLoad = false;
 	});
 </script>
 
-{#if $isLoading}
+{#if isPageLoad}
 	<LoadingSplashScreen />
 {:else}
 	<div class="flex flex-col min-w-full" in:fade={{ delay: 550 }}>
@@ -49,7 +46,7 @@
 		<main class="container mx-auto grid min-w-full">
 			{#key data.pathname}
 				<div
-					in:fade={{ easing: cubicOut, duration: 300, delay: 400 }}
+					in:fade={{ easing: cubicOut, duration: 300, delay: 300 }}
 					out:fade={{ easing: cubicIn, duration: 300 }}
 				>
 					<slot />

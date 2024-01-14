@@ -5,7 +5,7 @@ import flowerplicityImg from '$lib/images/flowerplicity.webp';
 export const cardContents = [
 	{
 		title: 'Portfolio',
-		paragraph: "What you see is now you've seen 😅✌🏽",
+		paragraph: 'Showcasing some of my projects, either side projects or at work',
 		img: `${portfolioImg}`,
 		github: {
 			link: 'https://github.com/ayiezac78/portfolio',

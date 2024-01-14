@@ -7,13 +7,13 @@
 	{#each cardContents as cardContent (cardContent)}
 		<li class="cards__item">
 			<a target="_blank" href={cardContent.proj.link}>
-				<div class="card shadow hover:shadow-lg h-full">
+				<div class="card shadow hover:shadow-lg h-full bg-slate-50">
 					<Image src={cardContent.img} layout="constrained" width={600} height={400} />
 					<div class="card__content">
-						<div class="card-title uppercase text-[#3d3d3d]">
+						<div class="card-title uppercase text-[#3d3d3d] mb-3">
 							{cardContent.title}
 						</div>
-						<p class="card__text">
+						<p class="card__text text-xs">
 							{cardContent.paragraph}
 						</p>
 						<div class="card-actions justify-between items-center gap-0">
@@ -74,7 +74,6 @@
 		}
 	}
 	.card {
-		background-color: #efefef;
 		border-radius: 0.25rem;
 		display: flex;
 		flex-direction: column;
@@ -95,7 +94,6 @@
 	}
 	.card__text {
 		flex: 1 1 auto;
-		font-size: 0.875rem;
 		line-height: 1.5;
 		margin-bottom: 1.25rem;
 		color: #3d3d3d;

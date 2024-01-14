@@ -1,7 +1,5 @@
 <script>
-	import { page } from '$app/stores';
 	import { fade } from 'svelte/transition';
-	import Seo from '../Seo.svelte';
 	import { browser } from '$app/environment';
 	import { afterUpdate } from 'svelte';
 	import { updateAfter, onBrowser } from '../../store/darkmode.js';
@@ -38,13 +36,6 @@
 		></path>
 	</svg>
 </div>
-
-<Seo
-	title="Ayie"
-	description="Showcasing my portfolio, personality, career, and also daily life journal"
-	keywords="portfolio, ayie portfolio, life journal, career "
-	canonical={$page.url.href}
-/>
 
 <style>
 	@-webkit-keyframes animate-svg-stroke-1 {

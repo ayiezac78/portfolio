@@ -5,13 +5,13 @@
 	import Seo from '$lib/Seo.svelte';
 </script>
 
-<section class="grid place-content-center min-h-screen lg:mt-8 mt-20">
+<section class="grid place-content-center mt-20">
 	<h1 class=" font-extralight text-5xl mb-5 lg:px-14 px-6">Portfolio</h1>
 
 	<div class="band">
 		{#each cardContents as cardContent (cardContent.title)}
 			<div class={`cardContent ${cardContent.uniqueClass}`}>
-				<a href={cardContent.proj.link} class="card">
+				<a href={cardContent.proj.link} class="card bg-slate-50">
 					<Image
 						src={cardContent.img}
 						layout="constrained"
@@ -85,7 +85,6 @@
 	}
 
 	.card {
-		background: white;
 		text-decoration: none;
 		color: #444;
 		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
