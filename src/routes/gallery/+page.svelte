@@ -4,7 +4,7 @@
 </script>
 
 <section class="grid place-content-center relative h-screen snap-start">
-	<h1 class=" font-extralight text-6xl">Journal</h1>
+	<h1 class=" font-extralight text-6xl">Gallery</h1>
 </section>
 <Seo
 	title="Journal"

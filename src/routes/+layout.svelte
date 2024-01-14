@@ -8,24 +8,33 @@
 	import { onMount } from 'svelte';
 	import Navbar from './Navbar.svelte';
 	import { cubicIn, cubicOut } from 'svelte/easing';
-	// import { isLoading } from '../store/loading.js';
 	import { beforeNavigate, afterNavigate } from '$app/navigation';
 	import navigationState from '../store/navigationState.ts';
 
 	export let data;
 	let isPageLoad = true;
 
+	const hasLocalStorage = typeof localStorage !== 'undefined';
+	const hasShownSplashScreen = hasLocalStorage
+		? localStorage.getItem('hasShownSplashScreen')
+		: null;
+
 	beforeNavigate(() => {
-		$navigationState = `loading`;
+		$navigationState = 'loading';
 	});
+
 	afterNavigate(() => {
 		$navigationState = 'loaded';
 	});
 
 	onMount(async () => {
-		// Simulate an asynchronous operation
-		await new Promise((resolve) => setTimeout(resolve, 3000));
-		isPageLoad = false;
+		if (hasLocalStorage && !hasShownSplashScreen) {
+			await new Promise((resolve) => setTimeout(resolve, 3000));
+			isPageLoad = false;
+			localStorage.setItem('hasShownSplashScreen', 'true');
+		} else {
+			isPageLoad = false;
+		}
 	});
 </script>
 

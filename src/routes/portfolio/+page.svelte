@@ -6,7 +6,7 @@
 </script>
 
 <section class="grid place-content-center mt-20">
-	<h1 class=" font-extralight text-5xl mb-5 lg:px-14 px-6">Portfolio</h1>
+	<h1 class=" font-semibold text-5xl mb-5 lg:px-14 px-6">Portfolio</h1>
 
 	<div class="band">
 		{#each cardContents as cardContent (cardContent.title)}
