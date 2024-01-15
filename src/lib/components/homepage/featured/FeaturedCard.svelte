@@ -13,7 +13,7 @@
 						<div class="card-title uppercase text-[#3d3d3d] mb-3">
 							{cardContent.title}
 						</div>
-						<p class="card__text text-xs">
+						<p class="card__text text-sm">
 							{cardContent.paragraph}
 						</p>
 						<div class="card-actions justify-between items-center gap-0">

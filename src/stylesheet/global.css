@@ -1,6 +1,7 @@
 :root {
 	--primary: #e2e5e0;
 	--secondary: #53514a;
+	--dark-bg: #172325;
 	--accent: #fc5445;
 	--background: var(--primary);
 	--foreground: 20 14.3% 4.1%;
@@ -69,7 +70,7 @@ html[data-theme='light'] {
 	}
 }
 html[data-theme='dark'] {
-	background-color: var(--secondary);
+	background-color: var(--dark-bg);
 	transition: ease-in-out 0.3s;
 
 	& a.active {

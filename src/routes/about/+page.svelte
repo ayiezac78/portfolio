@@ -5,8 +5,20 @@
 	import Seo from '$lib/Seo.svelte';
 	import profileImg from '$lib/images/me.webp';
 	import resume from '$lib/pdf/Maniago_Resume.pdf';
+	import Icon from '@iconify/svelte';
+	import Lottie from 'lottie-web';
+	import { onMount } from 'svelte';
+	import animationData from '../../lib/data/stacks.json';
 
-	console.log(careerData);
+	let animationContainer;
+
+	onMount(() => {
+		Lottie.loadAnimation({
+			container: animationContainer,
+			animationData,
+			renderer: 'svg'
+		});
+	});
 </script>
 
 <section class="mt-16">
@@ -28,17 +40,17 @@
 				<p class="py-6 text-balance">A Front-end Web Developer based in Philippines.</p>
 				<div class="flex justify-center gap-3">
 					<a href={resume} class="btn button btn-sm rounded-full" target="_blank">Download CV</a>
-					<a href={`javascript:void(0)`} class="btn button-cta btn-sm rounded-full">Get in Touch</a>
+					<a href="#getInTouch" class="btn button-cta btn-sm rounded-full">Get in Touch</a>
 				</div>
 			</div>
 		</div>
 	</div>
 	<!-- About Me -->
 	<section class="bg-[#53514a]">
-		<div class="px-14 py-5">
-			<span class="font-semibold text-slate-100">Description</span>
+		<div class="px-14 py-5 text-center">
+			<span class=" text-slate-100">Description</span>
 			<h2 class="font-bold text-2xl text-slate-100 mb-5">ABOUT ME</h2>
-			<p class="text-slate-100 text-xs font-light leading-relaxed mb-3">
+			<p class="text-slate-100 text-sm font-light leading-relaxed mb-3 text-start">
 				It's Ariel Maniago, a passionate learner, a creative developer, and designer. I embarked on
 				my journey as a Front-end Web Developer last year of 2023, in the vibrant city of Cebu,
 				Philippines. As a started out my journey i feel enthusiast and excited by crafting
@@ -46,8 +58,8 @@
 			</p>
 		</div>
 	</section>
-	<section>
-		<div class="px-14 py-5">
+	<section class="my-5">
+		<div class="px-14 py-5 text-center">
 			<span class="font-semibold">Career</span>
 			<h2 class="font-bold text-2xl mb-5">EXPERIENCE</h2>
 			<div class="flex justify-between lg:flex-row flex-col gap-5">
@@ -122,10 +134,57 @@
 			</div>
 		</div>
 	</section>
-	<section>
-		<div class="px-14">
-			<span class="font-semibold">Techonologies</span>
+	<section class="my-5">
+		<div class="px-14 text-center">
+			<span class="font-semibold">Skills</span>
 			<h2 class="font-bold text-2xl mb-5 uppercase">Tech Stack</h2>
+		</div>
+		<div class="flex items-center justify-center lg:flex-row flex-col-reverse">
+			<div class="flex justify-center">
+				<div class="grid lg:grid-cols-8 lg:grid-rows-3 grid-cols-5 gap-x-5 gap-y-3">
+					<Icon icon="akar-icons:html-fill" width="40" height="40" />
+					<Icon icon="akar-icons:css-fill" width="40" height="40" />
+					<Icon icon="fluent:javascript-16-filled" width="40" height="40" />
+					<Icon icon="mdi:tailwind" width="40" height="40" />
+					<Icon icon="simple-icons:bootstrap" width="40" height="40" />
+					<Icon icon="devicon-plain:jquery-wordmark" width="40" height="40" />
+					<Icon icon="mdi:react" width="40" height="40" />
+					<Icon icon="ri:svelte-fill" width="40" height="40" />
+					<Icon icon="akar-icons:php-fill" width="40" height="40" />
+					<Icon icon="carbon:json" width="40" height="40" />
+					<Icon icon="mdi:git" width="40" height="40" />
+					<Icon icon="mdi:github" width="40" height="40" />
+					<Icon icon="solar:figma-broken" width="40" height="40" />
+					<Icon icon="simple-icons:filezilla" width="40" height="40" />
+					<Icon icon="tabler:file-type-xml" width="40" height="40" />
+					<Icon icon="akar-icons:vscode-fill" width="40" height="40" />
+					<Icon icon="mdi:trello" width="40" height="40" />
+				</div>
+			</div>
+			<!-- <div class=" w-11/12">
+				<div class="h-[33vh]" bind:this={animationContainer}></div>
+			</div> -->
+		</div>
+	</section>
+
+	<!-- Get in Touch -->
+	<section id="getInTouch" class="bg-[#53514a] py-5">
+		<div class="hero text-base-100">
+			<div class="hero-content text-center">
+				<div class="max-w-md">
+					<span class="text-base-100">Curious?</span>
+					<h2 class="font-bold text-2xl mb-5 text-base-100">Get in Touch</h2>
+					<p class="py-6 text-sm">
+						If you have any suggestion, questions or just want to say hello, please don't hesitate
+						to reach out. I will make an effort to respond as soon as possible.
+					</p>
+					<a
+						href="mailto:admaniago01@gmail.com"
+						class="btn button-cta btn-sm rounded-full hover:!text-base-100 sendmessagebtn"
+						>SEND A MESSAGE
+					</a>
+				</div>
+			</div>
 		</div>
 	</section>
 </section>
@@ -135,3 +194,9 @@
 	keywords="about, about ayie, hobbies, personalities, background"
 	canonical={$page.url.href}
 />
+
+<style>
+	.sendmessagebtn:hover {
+		outline: solid 1px #fff !important;
+	}
+</style>

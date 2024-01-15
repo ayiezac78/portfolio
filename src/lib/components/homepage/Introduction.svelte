@@ -21,19 +21,20 @@
 	];
 </script>
 
-<span class="text-lg text-start">Front-end Web Developer</span>
+<p class="text-lg text-start">Front-end Web Developer</p>
 <h1 class="text-center font-semibold lg:text-8xl md:text-6xl text-5xl">
 	Ariel <span class="text-[#fc5445]">Maniago</span><span class="blinking-cursor" />
 </h1>
-<div class="text-base text-start">
-	'Where <span class="inline-flex text-sm font-semibold"
-		><span> {'<'} </span>
-		<pre><code>codes</code></pre>
-		<span class="text-[#fc5445]">{'/'}</span><span>{'>'}</span></span
-	>
+<p class="text-sm text-start">
+	'Where
+	<span class="inline-flex text-sm">
+		<span> {'<'} </span>
+		codes
+		<span class="text-[#fc5445]">{'/'}</span><span>{'>'}</span>
+	</span>
 	meets
 	<span class="text-[#fc5445]">creativity</span>'
-</div>
+</p>
 <nav class="py-3">
 	<div class="flex items-center gap-4">
 		{#each socialFooterLinks as socialFooterLink (socialFooterLink)}

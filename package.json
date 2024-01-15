@@ -31,8 +31,10 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@lottiefiles/svelte-lottie-player": "^0.3.0",
 		"@unpic/svelte": "^0.0.43",
 		"iconify-icon": "^1.0.8",
+		"lottie-web": "^5.12.2",
 		"lucide-svelte": "^0.309.0"
 	}
 }
