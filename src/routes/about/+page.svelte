@@ -32,7 +32,8 @@
 							layout="constrained"
 							width={200}
 							height={200}
-							class="grayscale hover:grayscale-0 transition-all ease-in-out skeleton"
+							class="grayscale hover:grayscale-0 transition-all ease-in-out"
+							priority
 						/>
 					</div>
 				</div>
