@@ -100,6 +100,21 @@ html[data-theme='dark'] {
 			color: #030303;
 		}
 	}
+
+	/* about page - get in touch portion */
+
+	& #getInTouch {
+		& span,
+		h2,
+		p {
+			color: var(--primary);
+		}
+
+		& .sendmessagebtn:hover {
+			outline: solid 1px var(--primary) !important;
+			color: var(--primary) !important;
+		}
+	}
 	.card-body {
 		.card-title {
 			color: #d3d3d3;

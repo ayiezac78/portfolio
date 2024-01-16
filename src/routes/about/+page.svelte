@@ -32,7 +32,7 @@
 							layout="constrained"
 							width={200}
 							height={200}
-							class="grayscale hover:grayscale-0 transition-all ease-in-out"
+							class="grayscale hover:grayscale-0 transition-all ease-in-out skeleton"
 						/>
 					</div>
 				</div>
@@ -134,7 +134,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="my-5">
+	<section class="my-5 py-5">
 		<div class="px-14 text-center">
 			<span class="font-semibold">Skills</span>
 			<h2 class="font-bold text-2xl mb-5 uppercase">Tech Stack</h2>

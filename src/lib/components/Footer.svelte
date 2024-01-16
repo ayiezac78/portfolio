@@ -2,7 +2,7 @@
 	import Logo from './Logo.svelte';
 </script>
 
-<aside class="snap-start">
+<aside class="py-3">
 	<div class="flex gap-0">
 		<Logo />
 	</div>

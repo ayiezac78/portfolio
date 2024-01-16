@@ -7,8 +7,8 @@
 	<h1 class=" font-extralight text-6xl">Gallery</h1>
 </section>
 <Seo
-	title="Journal"
-	description="rethinking and retelling about past life, and realizing about my sorroundings in this type of world"
-	keywords="journal, ayie journal"
+	title="Media Gallery"
+	description="reimagining and retelling about past life, where images and videos reminds of my life through memories"
+	keywords="memories, images, gallery, videos, reimagining, retelling"
 	canonical={$page.url.href}
 />
