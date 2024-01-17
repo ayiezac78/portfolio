@@ -6,19 +6,6 @@
 	import profileImg from '$lib/images/me.webp';
 	import resume from '$lib/pdf/Maniago_Resume.pdf';
 	import Icon from '@iconify/svelte';
-	import Lottie from 'lottie-web';
-	import { onMount } from 'svelte';
-	import animationData from '../../lib/data/stacks.json';
-
-	let animationContainer;
-
-	onMount(() => {
-		Lottie.loadAnimation({
-			container: animationContainer,
-			animationData,
-			renderer: 'svg'
-		});
-	});
 </script>
 
 <section class="mt-16">
@@ -65,7 +52,7 @@
 			<h2 class="font-bold text-2xl mb-5">EXPERIENCE</h2>
 			<div class="flex justify-between lg:flex-row flex-col gap-5">
 				{#each careerData as career (career)}
-					<div class="py-3">
+					<div class="p-3 shadow rounded">
 						<div class="flex justify-between items-center">
 							<h3 class="text-lg font-semibold">{career.jobTitle}</h3>
 							<small class="badge text-xs bg-[#53514a] border-0 text-slate-100 font-thin"
@@ -160,6 +147,7 @@
 					<Icon icon="tabler:file-type-xml" width="40" height="40" />
 					<Icon icon="akar-icons:vscode-fill" width="40" height="40" />
 					<Icon icon="mdi:trello" width="40" height="40" />
+					<Icon icon="devicon-plain:photoshop" width="40" height="40" />
 				</div>
 			</div>
 			<!-- <div class=" w-11/12">
