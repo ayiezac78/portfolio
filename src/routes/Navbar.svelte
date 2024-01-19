@@ -10,17 +10,19 @@
 </script>
 
 <div class="flex place-items-center justify-between">
-	<a class="flex" href="/">
-		<Logo />
-	</a>
-	<div class="flex gap-3 nav-items dark:text-neutral-50">
-		{#each navlinks as navlink (navlink)}
-			<a
-				class:active={routeId == navlink.path}
-				class="flex gap-1 hover:text-[#df4a1b] transition-all"
-				href={navlink.path}><span>{@html navlink.logo}</span>{navlink.content}</a
-			>
-		{/each}
+	<div class="flex items-center gap-10">
+		<a class="flex" href="/">
+			<Logo />
+		</a>
+		<div class="flex gap-3 nav-items dark:text-neutral-50">
+			{#each navlinks as navlink (navlink)}
+				<a
+					class:active={routeId == navlink.path}
+					class="flex gap-1 hover:text-[#df4a1b] transition-all"
+					href={navlink.path}><span>{@html navlink.logo}</span>{navlink.content}</a
+				>
+			{/each}
+		</div>
 	</div>
 	<div class="flex items-center gap-2">
 		<ThemeSwitch />
