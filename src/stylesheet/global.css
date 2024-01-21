@@ -145,6 +145,10 @@ html[data-theme='dark'] {
 .active-details {
 	color: var(--text-accent-color) !important;
 }
+.active-profile{
+	outline: 2px solid var(--accent);
+	border-radius: 50%;
+}
 footer {
 	grid-row: 2; /* Place footer in the second row */
 }
