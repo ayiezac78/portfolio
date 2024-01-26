@@ -1,6 +1,11 @@
 <script>
 	import { cardContents } from '$lib/portfolioData.js';
 	import { Image } from '@unpic/svelte';
+	import { blurhashToCssGradientString } from '@unpic/placeholder';
+
+	const blurHash = (blurHashString) => {
+		return blurhashToCssGradientString(blurHashString);
+	};
 </script>
 
 <ul class="cards" id="portfolio">
@@ -8,7 +13,13 @@
 		<li class="cards__item">
 			<a target="_blank" href={cardContent.proj.link}>
 				<div class="card shadow hover:shadow-lg h-full bg-slate-50">
-					<Image src={cardContent.img} layout="constrained" width={600} height={400} />
+					<Image
+						src={cardContent.img}
+						layout="constrained"
+						width={600}
+						height={400}
+						background={blurHash(cardContent.blurhashString)}
+					/>
 					<div class="card__content">
 						<div class="card-title uppercase text-[#3d3d3d] mb-3">
 							{cardContent.title}

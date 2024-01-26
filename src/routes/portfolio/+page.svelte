@@ -3,6 +3,11 @@
 	import { cardContents } from '$lib/portfolioData.js';
 	import { page } from '$app/stores';
 	import Seo from '$lib/Seo.svelte';
+	import { blurhashToCssGradientString } from '@unpic/placeholder';
+
+	const blurHash = (blurHashString) => {
+		return blurhashToCssGradientString(blurHashString);
+	};
 </script>
 
 <section class="grid place-content-center mt-20">
@@ -18,6 +23,7 @@
 						width={600}
 						height={400}
 						class="rounded-t-xl"
+						background={blurHash(cardContent.blurhashString)}
 					/>
 					<article>
 						<h2 class="uppercase font-bold">{cardContent.title}</h2>
