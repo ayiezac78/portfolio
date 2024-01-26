@@ -2,10 +2,13 @@
 	import { careerData } from '$lib/careerData.js';
 	import { Image } from '@unpic/svelte';
 	import { page } from '$app/stores';
+	import { blurhashToCssGradientString } from '@unpic/placeholder';
 	import Seo from '$lib/Seo.svelte';
 	import profileImg from '$lib/images/me.webp';
 	import resume from '$lib/pdf/Maniago_Resume.pdf';
 	import Icon from '@iconify/svelte';
+
+	const blurhash = blurhashToCssGradientString('LCDlvfE11t-V_8NGbcnh0O$%}FEM');
 </script>
 
 <section class="mt-16">
@@ -20,8 +23,10 @@
 							width={200}
 							height={200}
 							class="grayscale hover:grayscale-0 transition-all ease-in-out"
-							priority
+							background={blurhash}
+							alt="Profile Image"
 						/>
+						<!-- <img src={profileImg} alt="Profile Image" style={blurhash} /> -->
 					</div>
 				</div>
 				<h1 class="text-5xl font-bold">Hi, I'm Ayie</h1>
