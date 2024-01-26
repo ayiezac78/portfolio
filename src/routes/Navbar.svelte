@@ -39,7 +39,7 @@
 			<div class="avatar">
 				<div class="w-8 rounded-full">
 					<Image
-						layout="constrained"
+						layout="fullWidth"
 						class="grayscale"
 						src={me}
 						alt="Profile Image"
