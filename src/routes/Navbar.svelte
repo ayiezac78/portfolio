@@ -1,4 +1,6 @@
 <script>
+	import { Image } from '@unpic/svelte';
+	import { blurhashToCssGradientString } from '@unpic/placeholder';
 	// import NavLinks from './NavLinks.svelte';
 	import { page } from '$app/stores';
 	import Logo from '$lib/components/Logo.svelte';
@@ -7,6 +9,7 @@
 	import { navlinks } from '$lib/navLinks.js';
 	import me from '$lib/images/me.webp';
 
+	const blurhash = blurhashToCssGradientString('LCDlvfE11t-V_8NGbcnh0O$%}FEM');
 	$: routeId = $page.route.id;
 </script>
 
@@ -35,7 +38,13 @@
 		>
 			<div class="avatar">
 				<div class="w-8 rounded-full">
-					<img class="grayscale" src={me} alt="me" />
+					<Image
+						layout="constrained"
+						class="grayscale"
+						src={me}
+						alt="Profile Image"
+						background={blurhash}
+					/>
 				</div>
 			</div>
 		</a>

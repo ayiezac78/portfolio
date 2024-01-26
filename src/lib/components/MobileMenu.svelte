@@ -3,8 +3,11 @@
 	import { onMount } from 'svelte';
 	import { navlinks } from '../navLinks.js';
 	import me from '$lib/images/me.webp';
+	import { Image } from '@unpic/svelte';
+	import { blurhashToCssGradientString } from '@unpic/placeholder';
 
 	let details;
+	const blurhash = blurhashToCssGradientString('LCDlvfE11t-V_8NGbcnh0O$%}FEM');
 
 	// Function to close the dropdown
 	const closeDropdown = () => {
@@ -71,7 +74,13 @@
 				>About <span class="flex"
 					><div class="avatar">
 						<div class="w-7 rounded-full">
-							<img class="grayscale" src={me} alt="me" />
+							<Image
+								layout="constrained"
+								class="grayscale"
+								src={me}
+								alt="Profile Image"
+								background={blurhash}
+							/>
 						</div>
 					</div></span
 				></a

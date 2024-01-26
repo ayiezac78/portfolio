@@ -26,7 +26,6 @@
 							background={blurhash}
 							alt="Profile Image"
 						/>
-						<!-- <img src={profileImg} alt="Profile Image" style={blurhash} /> -->
 					</div>
 				</div>
 				<h1 class="text-5xl font-bold">Hi, I'm Ayie</h1>
