@@ -1,4 +1,5 @@
 import './assets/styles/main.css'
+import 'floating-vue/dist/style.css'
 import { createPinia } from 'pinia'
 import { createApp } from 'vue'
 import router from './routes/'
@@ -8,6 +9,7 @@ import { createHead, CapoPlugin } from '@unhead/vue'
 import { useDark } from "@vueuse/core";
 import { computed } from "vue";
 import VueTippy from 'vue-tippy'
+import FloatingVue from 'floating-vue'
 
 const isDark = useDark({
   selector: "html",
@@ -42,4 +44,7 @@ app.use(router);
 app.use(head);
 app.use(createPinia());
 app.use(VueTippy)
+app.use(FloatingVue, {
+  shift: true,
+})
 app.mount('#app');

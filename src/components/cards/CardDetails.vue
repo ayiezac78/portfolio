@@ -1,15 +1,123 @@
 <template>
   <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-    <CardLayout v-for="(repo, index) in repoData.repos" :key="index" :title="repo.title" :description="repo.description"
-      :external-link="repo.external_link" :icon="repo.icon" :last_updated="repo.last_updated" />
+    <template v-if="isLoading">
+      <div>Loading...</div>
+    </template>
+    <template v-if="error">
+      <div>Error fetching data. Please try again.</div>
+    </template>
+    <template v-else>
+      <template v-for="(repo, index) in repoData" :key="index">
+        <div
+          class="card w-full border rounded-lg dark:border-gray-800 shadow dark:hover:bg-gray-800 hover:bg-gray-100 focus:bg-gray-100 active:bg-gray-100 delay-100 duration-200 card-compact h-full">
+          <div class="card-body justify-between">
+            <h2 class="text-lg font-medium flex items-center justify-between">
+              <span>
+                {{ repo.repoData.name }}
+              </span>
+              <div class="flex gap-x-2">
+                <div>
+                  <span v-if="!repo.repoData.homepage"></span>
+                  <span v-else>
+                    <a :href="repo.repoData.homepage">
+                      <Icon icon="material-symbols:link-rounded" class="text-xl" />
+                    </a>
+                  </span>
+                </div>
+                <div>
+                  <a :href="repo.repoData.html_url">
+                    <Icon icon="mdi:github" class="text-xl" />
+                  </a>
+                </div>
+              </div>
+            </h2>
+            <div class="text-xs dark:text-gray-400 text-gray-500 mt-3">
+              <p v-if="!repo.repoData.description">No Description</p>
+              <p v-else>
+                {{ repo.repoData.description }}
+              </p>
+            </div>
+            <div class="flex justify-between items-center mt-3">
+              <div class="flex gap-x-2">
+                <template v-for="(repo, index) in repo.languagesData" :key="index">
+                  <span class="text-xs text-slate-500 flex items-center">
+                    <Icon v-if="repo === 'HTML'" icon="ri:html5-line" class="text-orange-500 text-lg" />
+                    <Icon v-if="repo === 'CSS'" icon="tabler:brand-css3" class="text-blue-500 text-lg" />
+                    <Icon v-if="repo === 'JavaScript'" icon="ri:javascript-line" class="text-yellow-500 text-lg" />
+                    <Icon v-if="repo === 'Vue'" icon="uit:vuejs-alt" class="text-green-600 text-lg" />
+                  </span>
+                </template>
+              </div>
+              <span class="text-xs text-slate-500">Updated {{ formatDate(repo.repoData.updated_at) }}</span>
+            </div>
+          </div>
+        </div>
+        <!-- </a> -->
+      </template>
+    </template>
+
   </div>
 </template>
 
 <script setup>
-import CardLayout from "./CardLayout.vue";
-import { useRepoData } from "@/stores/RepoData.js";
+import { Octokit } from "@octokit/core";
+import { ref } from 'vue';
+import { Icon } from '@iconify/vue'
+import { format } from 'date-fns';
 
-const repoData = useRepoData();
+const repoData = ref(null);
+const repos = ref([
+  { repo: 'blog-editor' },
+  { repo: 'blog-posts-api' },
+  { repo: 'mp3-player' },
+  { repo: 'clinic' },
+  { repo: 'flowerplicity' },
+]);
+const isLoading = ref(true);
+const error = ref(null);
+
+
+const fetchData = async () => {
+  isLoading.value = true;
+  const octokit = new Octokit({
+    auth: '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'
+  });
+
+  try {
+    const responses = await Promise.all(repos.value.map(async (repo) => {
+      const repoDataResponse = await octokit.request(`GET /repos/ayiezac78/${repo.repo}`, {
+        owner: 'ayiezac78',
+        repo: repo.repo,
+        Headers: {
+          'X-GitHub-Api-Version': '2022-11-28'
+        }
+      });
+
+      const languagesResponse = await octokit.request(`GET /repos/ayiezac78/${repo.repo}/languages`, {
+        owner: 'ayiezac78',
+        repo: repo.repo,
+        Headers: {
+          'X-GitHub-Api-Version': '2022-11-28'
+        }
+      });
+
+      return { repoData: repoDataResponse.data, languagesData: Object.keys(languagesResponse.data) };
+    }));
+
+    repoData.value = responses;
+  } catch (error) {
+    console.error('Error fetching repository data:', error);
+    isLoading.value = false;
+  } finally {
+    isLoading.value = false
+  }
+}
+
+fetchData();
+
+const formatDate = (date) => {
+  return format(new Date(date), 'MMMM dd, yyyy');
+}
 </script>
 
 <style lang="css" scoped></style>
