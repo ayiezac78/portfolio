@@ -1,0 +1,152 @@
+@import url(./styles.css);
+@import "primeicons/primeicons.css";
+
+:root {
+  /* dark mode */
+  /* https: //huemint.com/website-1/#palette=14010e-fffafd-f87700 */
+  --60-darkColor: #000402;
+  --30-darkColor: #fffafd;
+  --10-darkColor: #FFA34D;
+
+  /* light mode */
+  /* https://huemint.com/website-1/#palette=ffffff-0c0e0f-d2160c */
+  --60-lightColor: #ffffff;
+  --30-lightColor: #140808;
+  --10-lightColor: #2A4647;
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/fonts/SpaceGrotesk-VariableFont_wght.ttf") format("truetype");
+  font-display: swap;
+  font-optical-sizing: auto;
+}
+
+@font-face {
+  font-family: "Space Grotesk override";
+  src: local('Franklin Gothic Medium'),
+    local('Cambria'),
+    local('Helvetica Neue'),
+    local('Arial'),
+    local('Noto Sans');
+  ;
+  ascent-override: 92.7734375%;
+  descent-override: 24.4140625%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: "Roboto Mono";
+  src: url("/fonts/RobotoMono-VariableFont_wght.ttf") format("truetype");
+  font-display: swap;
+  font-optical-sizing: auto;
+}
+
+@font-face {
+  font-family: "Roboto Mono override";
+  src: local('Cascadia Code'),
+    local('Source Code Pro'),
+    local('Menlo'),
+    local('Consolas'),
+    local('DejaVu Sans Mono');
+  ascent-override: 92.7734375%;
+  descent-override: 24.4140625%;
+  line-gap-override: 0%;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* body * {
+  outline: 1px dotted red;
+} */
+
+html {
+  scrollbar-gutter: stable both-edges;
+  color: var(--30-lightColor);
+  background-color: var(--60-lightColor);
+
+  & .text-cta {
+    color: var(--10-lightColor)
+  }
+
+  & nav li a:hover,
+  nav li a.router-link-active,
+  nav li a.router-link-exact-active {
+    color: var(--30-lightColor);
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  #download-icon {
+    color: var(--10-lightColor);
+  }
+
+  .link-cta {
+    &:hover {
+      color: var(--10-lightColor);
+    }
+  }
+}
+
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  background-color: var(--60-darkColor);
+  color: var(--30-darkColor);
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--10-lightColor);
+    border-radius: 5px;
+  }
+
+  & .text-cta {
+    color: var(--10-darkColor)
+  }
+
+  & nav li a:hover,
+  nav li a.router-link-active,
+  nav li a.router-link-exact-active {
+    color: var(--30-darkColor);
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  #download-icon {
+    color: var(--10-darkColor);
+  }
+
+  .link-cta {
+    &:hover {
+      color: var(--10-darkColor);
+    }
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+p,
+a,
+small,
+button,
+table {
+  font-family: 'Roboto Mono', monospace;
+}
+
+tbody {
+  font-size: smaller;
+}
+
+.tooltip:before {
+  font-size: smaller;
+  text-wrap: balance;
+}
