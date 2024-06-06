@@ -76,7 +76,7 @@ const repos = ref([
 const isLoading = ref(true);
 const error = ref(null);
 
-const token = import.meta.env.VITE_APP_GITHUB_TOKEN;
+const token = "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";
 
 const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
