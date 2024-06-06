@@ -62,7 +62,7 @@
 <script setup>
 import { Octokit } from "@octokit/core";
 import { ref } from 'vue';
-import { Icon } from '@iconify/vue'
+import { Icon } from '@iconify/vue';
 import { format } from 'date-fns';
 
 const repoData = ref(null);
@@ -86,40 +86,48 @@ const fetchData = async () => {
 
   try {
     const responses = await Promise.all(repos.value.map(async (repo) => {
-      const repoDataResponse = await octokit.request(`GET /repos/ayiezac78/${repo.repo}`, {
-        owner: 'ayiezac78',
-        repo: repo.repo,
-        Headers: {
-          Authorization: `token ${token}`,
-          'X-GitHub-Api-Version': '2022-11-28'
-        }
-      });
+      const [repoDataResponse, languagesResponse] = await Promise.all([
+        octokit.request('GET /repos/{owner}/{repo}', {
+          owner: 'ayiezac78',
+          repo: repo.repo,
+          headers: {
+            "user-agent": "ayiezac78",
+            Accept: "application/vnd.github.v3+json",
+            Authorization: `token ${token}`,
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        }),
+        octokit.request('GET /repos/{owner}/{repo}/languages', {
+          owner: 'ayiezac78',
+          repo: repo.repo,
+          headers: {
+            Accept: "application/vnd.github.v3+json",
+            Authorization: `token ${token}`,
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        })
+      ]);
 
-      const languagesResponse = await octokit.request(`GET /repos/ayiezac78/${repo.repo}/languages`, {
-        owner: 'ayiezac78',
-        repo: repo.repo,
-        Headers: {
-          'X-GitHub-Api-Version': '2022-11-28'
-        }
-      });
-
-      return { repoData: repoDataResponse.data, languagesData: Object.keys(languagesResponse.data) };
+      return {
+        repoData: repoDataResponse.data,
+        languagesData: Object.keys(languagesResponse.data)
+      };
     }));
 
     repoData.value = responses;
-  } catch (error) {
-    console.error('Error fetching repository data:', error);
-    isLoading.value = false;
+  } catch (err) {
+    console.error('Error fetching repository data:', err);
+    error.value = 'Failed to fetch repository data';
   } finally {
-    isLoading.value = false
+    isLoading.value = false;
   }
-}
+};
 
 fetchData();
 
 const formatDate = (date) => {
   return format(new Date(date), 'MMMM dd, yyyy');
-}
+};
 </script>
 
 <style lang="css" scoped></style>
