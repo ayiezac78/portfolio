@@ -76,11 +76,12 @@ const repos = ref([
 const isLoading = ref(true);
 const error = ref(null);
 
+const token = import.meta.env.VITE_APP_GITHUB_TOKEN;
 
 const fetchData = async () => {
   isLoading.value = true;
   const octokit = new Octokit({
-    auth: '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'
+    auth: token
   });
 
   try {
@@ -89,6 +90,7 @@ const fetchData = async () => {
         owner: 'ayiezac78',
         repo: repo.repo,
         Headers: {
+          Authorization: `token ${token}`,
           'X-GitHub-Api-Version': '2022-11-28'
         }
       });
