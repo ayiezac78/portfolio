@@ -65,7 +65,7 @@ import { ref } from 'vue';
 import { Icon } from '@iconify/vue';
 import { format } from 'date-fns';
 
-const repoData = ref(null);
+const repoData = ref([]);
 const repos = ref([
   { repo: 'blog-editor' },
   { repo: 'blog-posts-api' },
@@ -78,6 +78,8 @@ const error = ref(null);
 
 const token = import.meta.env.VITE_APP_GITHUB_TOKEN;
 
+const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
 const fetchData = async () => {
   isLoading.value = true;
   const octokit = new Octokit({
@@ -85,7 +87,19 @@ const fetchData = async () => {
   });
 
   try {
-    const responses = await Promise.all(repos.value.map(async (repo) => {
+    for (const repo of repos.value) {
+      // Check rate limit status
+      const rateLimit = await octokit.request('GET /rate_limit');
+      const remaining = rateLimit.data.rate.remaining;
+      const resetTime = rateLimit.data.rate.reset * 1000;
+
+      if (remaining === 0) {
+        const waitTime = resetTime - Date.now();
+        console.log(`Rate limit exceeded. Waiting for ${waitTime / 1000} seconds`);
+        await wait(waitTime);
+      }
+
+      // Fetch repository data and languages
       const [repoDataResponse, languagesResponse] = await Promise.all([
         octokit.request('GET /repos/{owner}/{repo}', {
           owner: 'ayiezac78',
@@ -107,13 +121,11 @@ const fetchData = async () => {
         })
       ]);
 
-      return {
+      repoData.value.push({
         repoData: repoDataResponse.data,
         languagesData: Object.keys(languagesResponse.data)
-      };
-    }));
-
-    repoData.value = responses;
+      });
+    }
   } catch (err) {
     console.error('Error fetching repository data:', err);
     error.value = 'Failed to fetch repository data';
@@ -127,6 +139,7 @@ fetchData();
 const formatDate = (date) => {
   return format(new Date(date), 'MMMM dd, yyyy');
 };
+
 </script>
 
 <style lang="css" scoped></style>
