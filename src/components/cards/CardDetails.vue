@@ -76,9 +76,7 @@ const repos = ref([
 const isLoading = ref(true);
 const error = ref(null);
 
-const token = "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";
-
-const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+const token = "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";
 
 const fetchData = async () => {
   isLoading.value = true;
@@ -88,16 +86,6 @@ const fetchData = async () => {
 
   try {
     for (const repo of repos.value) {
-      // Check rate limit status
-      const rateLimit = await octokit.request('GET /rate_limit');
-      const remaining = rateLimit.data.rate.remaining;
-      const resetTime = rateLimit.data.rate.reset * 1000;
-
-      if (remaining === 0) {
-        const waitTime = resetTime - Date.now();
-        console.log(`Rate limit exceeded. Waiting for ${waitTime / 1000} seconds`);
-        await wait(waitTime);
-      }
 
       // Fetch repository data and languages
       const [repoDataResponse, languagesResponse] = await Promise.all([
