@@ -3,9 +3,6 @@
     <div class="card-body">
       <div class="flex items-center justify-between">
         <div class="gap-3">
-          <!-- <div>
-            <component :is="cardLogo"></component>
-          </div> -->
           <h2 class="text-lg font-medium">
             {{ title }}
           </h2>
@@ -34,7 +31,6 @@ defineProps({
   icon: Array,
   externalLink: String,
   last_updated: String,
-  cardLogo: Object,
 });
 </script>
 
