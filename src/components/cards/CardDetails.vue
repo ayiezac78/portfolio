@@ -91,7 +91,6 @@ const fetchData = async () => {
           owner: 'ayiezac78',
           repo: repo.repo,
           headers: {
-            "user-agent": "ayiezac78",
             Accept: "application/vnd.github.v3+json",
             Authorization: `token ${token}`,
             'X-GitHub-Api-Version': '2022-11-28'
