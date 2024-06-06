@@ -67,6 +67,8 @@ import { format } from 'date-fns';
 
 const repoData = ref([]);
 const repos = ref([
+  { repo: 'blog-posts-api' },
+  { repo: 'blog-editor' },
   { repo: 'mp3-player' },
   { repo: 'clinic' },
   { repo: 'flowerplicity' },
