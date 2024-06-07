@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+  <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-8" v-once>
     <template v-for="repo in repoData.repos" :key="repo.id">
       <CardLayout :title="repo.title" :description="repo.description" :icon="repo.icon"
         :externalLink="repo.external_link" :last_updated="repo.last_updated" />

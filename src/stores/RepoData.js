@@ -13,7 +13,7 @@ export const useRepoData = defineStore('repoData', {
     repos: [
       {
         id: 0,
-        title: "Music Player",
+        title: "mp3-player",
         description:
           "It's a client side application written in vanilla JavaScript using AudioContext API, which allows you to listen to your favorite music.",
         external_link: "https://ayiezac78.github.io/mp3-player/",
@@ -28,7 +28,7 @@ export const useRepoData = defineStore('repoData', {
       },
       {
         id: 1,
-        title: "AWR cLinic",
+        title: "clinicmp2",
         description:
           "It's a front-end API-driven web application that focuses on setting patient's online appointment schedule to the clinic.",
         external_link: "https://clinicmp2.netlify.app/",
@@ -36,15 +36,13 @@ export const useRepoData = defineStore('repoData', {
         last_updated: 'Updated on Apr 29, 2023',
         icon: [
           "devicon:javascript",
-          "devicon:html5",
-          "devicon:css3",
           "vscode-icons:file-type-reactjs",
           "devicon:tailwindcss",
         ],
       },
       {
         id: 2,
-        title: "Flowerplicity",
+        title: "flowerplicity",
         description:
           "It's a static web application that focuses on providing a one-stop-shop for flowers.",
         external_link: "https://flowerplicity.netlify.app/",

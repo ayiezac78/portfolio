@@ -7,8 +7,9 @@
             {{ title }}
           </h2>
         </div>
-        <a rel="noreferrer noopener" target="_blank" class="flex" :href="externalLink"><i
-            class="pi pi-external-link"></i></a>
+        <a rel="noreferrer noopener" target="_blank" class="flex" :href="externalLink">
+          <Icon icon="material-symbols:link-rounded" class="text-lg" />
+        </a>
       </div>
       <p class="text-xs">{{ description }}</p>
       <div class="flex justify-between items-center">
