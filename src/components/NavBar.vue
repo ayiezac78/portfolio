@@ -28,8 +28,8 @@ const mode = computed(() => (isDark.value ? "line-md:moon-filled-alt-to-sunny-fi
         <NavLinks id="header-nav-links" />
       </div>
       <div class="flex gap-x-2 items-center">
-        <button type="button" aria-label="Toggle dark mode" title="Toggle Theme" id="switch__mode"
-          @click="toggleDark()">
+        <button type="button" aria-label="Toggle dark mode" title="Toggle Theme" id="switch__mode" @click="toggleDark()"
+          class="swap swap-rotate">
           <Icon :icon="mode" class="text-2xl" />
         </button>
         <a title="Email me" href="mailto:admaniago01@gmail.com" aria-label="Email me">

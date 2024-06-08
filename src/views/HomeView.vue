@@ -46,7 +46,7 @@
       <h2
         class="font-medium absolute left-[1.5em] top-[-1.2ex] badge !border-2 !border-slate-200 dark:!border-slate-800  z-10">
         Music</h2>
-      <SpotifyCurrentPlaying v-once />
+      <SpotifyCurrentPlaying />
     </div>
   </div>
 </template>
