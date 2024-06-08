@@ -57,4 +57,4 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
         with:
-          token: ${{ secrets.VITE_APP_GITHUB_ACCESS_TOKEN }}
+          token: ${{ secrets.GH_TOKEN }}
