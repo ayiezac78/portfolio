@@ -29,7 +29,7 @@ import { Icon } from '@iconify/vue'
 defineProps({
   title: String,
   description: String,
-  icon: Array,
+  icon: String,
   externalLink: String,
   last_updated: String,
 });
