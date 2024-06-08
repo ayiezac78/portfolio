@@ -21,6 +21,7 @@ export default defineConfig({
     [FontaineTransform.vite(options)],
     UnheadVite(),
   ],
+  base: '/portfolio',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
