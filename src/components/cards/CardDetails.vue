@@ -86,7 +86,7 @@ const fetchData = async () => {
 
       // Fetch repository data and languages
       const [repoDataResponse, languagesResponse] = await Promise.all([
-        octokit.request('GET /repos/{owner}/{repo}', {
+        octokit.request(`GET /repos/ayiezac78/${repo.repo}`, {
           owner: 'ayiezac78',
           repo: repo.repo,
           headers: {
@@ -95,7 +95,7 @@ const fetchData = async () => {
             'X-GitHub-Api-Version': '2022-11-28'
           }
         }),
-        octokit.request('GET /repos/{owner}/{repo}/languages', {
+        octokit.request(`GET /repos/ayiezac78/${repo.repo}/languages`, {
           owner: 'ayiezac78',
           repo: repo.repo,
           headers: {
