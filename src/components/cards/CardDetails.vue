@@ -1,9 +1,34 @@
 <template>
-  <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-8" v-once>
+  <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
     <!-- <template v-for="repo in repoData.repos" :key="repo.id">
       <CardLayout :title="repo.title" :description="repo.description" :icon="repo.icon"
         :externalLink="repo.external_link" :last_updated="repo.last_updated" />
     </template> -->
+    <template v-for="(repo, index) in repoData" :key="index">
+      <div class="card shadow card-compact card-bordered">
+        <div class="card-body">
+          <div class="flex items-center justify-between">
+            <div class="gap-3">
+              <h2 class="text-lg font-medium">
+                {{ repo.repoData.name }}
+              </h2>
+            </div>
+            <a rel="noreferrer noopener" target="_blank" class="flex" :href="externalLink">
+              <Icon icon="material-symbols:link-rounded" class="text-lg" />
+            </a>
+          </div>
+          <p class="text-xs">{{ description }}</p>
+          <div class="flex justify-between items-center">
+            <div class="flex items-center gap-x-2">
+              <Icon v-for="(icon, index) in icon" :key="index" :icon="icon"></Icon>
+            </div>
+            <div>
+              <small>{{ last_updated }}</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
   </div>
 </template>
 
