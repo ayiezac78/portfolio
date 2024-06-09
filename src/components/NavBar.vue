@@ -36,7 +36,7 @@ const mode = computed(() => (isDark.value ? "line-md:moon-filled-alt-to-sunny-fi
           <Icon icon="line-md:email" class="text-2xl" />
         </a>
         <a :href="cv" title="Download CV" download="Maniago_Resume" aria-label="Download CV">
-          <Icon icon="line-md:downloading-loop" class="text-2xl" id="download-icon" />
+          <Icon icon="line-md:downloading-loop" class="text-2xl text-orange-500" />
         </a>
       </div>
     </nav>
