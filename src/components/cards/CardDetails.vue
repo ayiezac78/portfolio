@@ -6,24 +6,27 @@
       <template v-for="(repo, index) in repoData" :key="index">
         <div class="card shadow card-compact card-bordered">
           <div class="card-body">
-            <div class="flex items-center justify-between">
+            <div class="flex items-start justify-between">
               <div class="grid gap-y-1">
-                <h3 class="font-semibold leading-none tracking-tight text-base">
+                <h3 class="font-semibold leading-none tracking-tight text-base flex items-center gap-x-1">
                   {{ repo.repoData.name }}
+                  <div class="tooltip cursor-pointer" :data-tip="repo.repoData.description">
+                    <Icon icon="material-symbols:help-outline-rounded" class="text-base text-slate-500" />
+                  </div>
                 </h3>
-                <div>
-                  <small class="text-slate-500">Updated {{ formattedDate(repo.repoData.updated_at) }}</small>
-                </div>
+                <small class="text-slate-500">Updated {{ formattedDate(repo.repoData.updated_at) }}</small>
               </div>
-              <div class="flex items-center gap-x-1">
+              <div class="flex gap-x-1">
                 <span>
-                  <a v-if="repo.repoData.html_url" rel="noreferrer noopener" target="_blank" class="flex"
+                  <a v-if="repo.repoData.html_url" rel="noreferrer noopener" target="_blank"
+                    class="flex text-slate-500 hover:text-slate-700 focus:text-slate-700 active:text-slate-700 dark:hover:text-slate-100 dark:focus:text-slate-100 dark:active:text-slate-100 transition-all delay-75 ease-in-out"
                     :href="repo.repoData.html_url">
                     <Icon icon="mdi:github" class="text-lg" />
                   </a>
                 </span>
                 <span>
-                  <a v-if="repo.repoData.homepage" rel="noreferrer noopener" target="_blank" class="flex"
+                  <a v-if="repo.repoData.homepage" rel="noreferrer noopener" target="_blank"
+                    class="flex text-slate-500 hover:text-slate-700 focus:text-slate-700 active:text-slate-700 dark:hover:text-slate-100 dark:focus:text-slate-100 dark:active:text-slate-100 transition-all delay-75 ease-in-out"
                     :href="repo.repoData.homepage">
                     <Icon icon="material-symbols:link-rounded" class="text-lg" />
                   </a>
@@ -31,11 +34,10 @@
 
               </div>
             </div>
-            <p class="text-xs flex items-center">{{ repo.repoData.description }}</p>
             <div class="flex justify-between items-center">
               <div class="flex items-center gap-x-2 text-slate-500">
                 <template v-for="(language, index) in repo.languagesData" :key="index">
-                  <small class="flex items-center">
+                  <small class="flex items-center mt-3">
                     <Icon icon="octicon:dot-24" class="text-xl"
                       :class="{ 'text-orange-500': language === 'HTML', 'text-yellow-400': language === 'JavaScript', 'text-green-500': language === 'Vue', 'text-blue-500': language === 'CSS' }" />
                     {{ language }}
