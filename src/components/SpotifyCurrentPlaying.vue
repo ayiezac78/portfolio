@@ -2,7 +2,7 @@
   <div>
     <div v-if="nowPlaying">
       <a target="_blank"
-        class="audio-player lg:w-[25rem] md:w-full w-full gap-x-4 border-2 active:border-2 focus:border-2 active:border-slate-500 focus:border-slate-500 dark:border-slate-900"
+        class="audio-player lg:w-[25rem] md:w-full w-full gap-x-4 border-2 active:border-2 focus:border-2 dark:hover:bg-slate-900 dark:active:bg-slate-900 dark:focus:bg-slate-900 active:border-slate-500 focus:border-slate-500 hover:bg-slate-100 active:bg-slate-100 focus:bg-slate-100 dark:border-slate-900"
         rel="noreferrer noopener" :href="nowPlaying.songUrl">
         <div class="avatar">
           <div class=" w-16 rounded-full">

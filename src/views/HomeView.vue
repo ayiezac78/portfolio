@@ -19,6 +19,7 @@
             ministry work.
             When
             I'm not immersed in that, you'll find me playing mobile RTS games, strumming my guitar, or indulging in
+            music,
             movies and anime.</p>
         </div>
       </div>

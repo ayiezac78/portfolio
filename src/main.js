@@ -9,7 +9,7 @@ import { createHead, CapoPlugin } from '@unhead/vue'
 import { useDark } from "@vueuse/core";
 import { computed } from "vue";
 import VueTippy from 'vue-tippy'
-import FloatingVue from 'floating-vue'
+import FloatingVue, { placements } from 'floating-vue'
 
 const isDark = useDark({
   selector: "html",
@@ -46,5 +46,10 @@ app.use(createPinia());
 app.use(VueTippy)
 app.use(FloatingVue, {
   shift: true,
+  themes: {
+    tooltip: {
+      placements: 'auto'
+    }
+  }
 })
 app.mount('#app');

@@ -9,7 +9,7 @@
       </div>
       <CardLayout v-else :title="repo.repoData.name" :description="repo.repoData.description"
         :html_url="repo.repoData.html_url" :homepage="repo.repoData.homepage"
-        :updated_at="formattedDate(repo.repoData.updated_at)" :language="repo.repoData.language" />
+        :updated_at="formattedDate(repo.repoData.pushed_at)" :language="repo.repoData.language" />
     </div>
   </div>
 </template>
@@ -81,6 +81,8 @@ watchEffect(() => {
   repoData.value = repos.map(() => ({ repoData: {}, languagesData: [] }));
   fetchData()
 });
+
+console.log(repoData);
 
 const formattedDate = (date) => format(new Date(date), 'MMMM dd, yyyy');
 </script>

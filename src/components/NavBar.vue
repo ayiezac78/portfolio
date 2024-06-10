@@ -28,14 +28,14 @@ const mode = computed(() => (isDark.value ? "line-md:moon-filled-alt-to-sunny-fi
         <NavLinks id="header-nav-links" />
       </div>
       <div class="flex gap-x-2 items-center">
-        <button type="button" aria-label="Toggle dark mode" title="Toggle Theme" id="switch__mode" @click="toggleDark()"
-          class="swap swap-rotate">
+        <button type="button" aria-label="Toggle dark mode" v-tooltip="'Toggle Theme'" id="switch__mode"
+          @click="toggleDark()" class="swap swap-rotate">
           <Icon :icon="mode" class="text-2xl" />
         </button>
-        <a title="Email me" href="mailto:admaniago01@gmail.com" aria-label="Email me">
+        <a v-tooltip="'Email me'" href="mailto:admaniago01@gmail.com" aria-label="Email me">
           <Icon icon="line-md:email" class="text-2xl" />
         </a>
-        <a :href="cv" title="Download CV" download="Maniago_Resume" aria-label="Download CV">
+        <a :href="cv" v-tooltip="'Download CV'" download="Maniago_Resume" aria-label="Download CV">
           <Icon icon="line-md:downloading-loop" class="text-2xl text-orange-500" />
         </a>
       </div>

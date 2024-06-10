@@ -37,8 +37,7 @@
     "theme-change": "^2.5.0",
     "unhead": "^1.9.10",
     "vue": "^3.4.21",
-    "vue-router": "4",
-    "vue-tippy": "v6"
+    "vue-router": "4"
   },
   "devDependencies": {
     "@iconify/vue": "^4.1.2",

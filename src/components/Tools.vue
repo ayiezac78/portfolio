@@ -44,46 +44,6 @@ const toolsArr = [
 		icon: "logos:ionic-icon",
 		url: "ionic.io/",
 	},
-	{
-		name: "HTML",
-		icon: "devicon:html5",
-		url: "html.com/",
-	},
-	{
-		name: "CSS",
-		icon: "devicon:css3",
-		url: "developer.mozilla.org/en-US/docs/Web/CSS",
-	},
-	{
-		name: "FileZilla",
-		icon: "devicon:filezilla",
-		url: "filezilla-project.org/",
-	},
-	{
-		name: "Bootstrap",
-		icon: "logos:bootstrap",
-		url: "getbootstrap.com/",
-	},
-	{
-		name: "VS Code",
-		icon: "logos:visual-studio-code",
-		url: "code.visualstudio.com/",
-	},
-	{
-		name: "Github",
-		icon: "line-md:github-loop",
-		url: "github.com/",
-	},
-	{
-		name: "Git",
-		icon: "vscode-icons:file-type-git",
-		url: "git-scm.com/",
-	},
-	{
-		name: "Trello",
-		icon: "logos:trello",
-		url: "trello.com/",
-	},
 ];
 
 const tools = shallowRef(toolsArr);
@@ -95,7 +55,7 @@ const tools = shallowRef(toolsArr);
 				<div class="card-body justify-center">
 					<ul class="flex gap-2 flex-wrap items-center lg:justify-start md:justify-evenly justify-start">
 						<li v-for="tool in tools" :key="tool.name">
-							<a :title="tool.name" target="_blank" rel="noreferrer noopener"
+							<a v-tooltip="tool.name" target="_blank" rel="noreferrer noopener"
 								class="flex gap-x-1 text-xs font-semibold items-center" :href="'https://' + tool.url">
 								<Icon :icon="tool.icon" class="text-xl" />
 							</a>
