@@ -13,14 +13,14 @@
             <a aria-label="github repo" v-if="html_url" rel="noreferrer noopener" target="_blank"
               class="flex text-slate-500 hover:text-slate-700 focus:text-slate-700 active:text-slate-700 dark:hover:text-slate-100 dark:focus:text-slate-100 dark:active:text-slate-100 transition-all delay-75 ease-in-out"
               :href="html_url">
-              <Icon icon="mdi:github" class="text-lg" />
+              <Icon icon="mdi:github" class="text-xl" />
             </a>
           </span>
           <span>
             <a aria-label="exteral link" v-if="homepage" rel="noreferrer noopener" target="_blank"
               class="flex text-slate-500 hover:text-slate-700 focus:text-slate-700 active:text-slate-700 dark:hover:text-slate-100 dark:focus:text-slate-100 dark:active:text-slate-100 transition-all delay-75 ease-in-out"
               :href="homepage">
-              <Icon icon="iconamoon:link-external-bold" class="text-lg" />
+              <Icon icon="iconamoon:link-external-bold" class="text-xl" />
             </a>
           </span>
 

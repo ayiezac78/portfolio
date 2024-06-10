@@ -18,10 +18,6 @@ useHead({
       name: 'description',
       content: 'Check out my latest web development posts and personal updates. Discover my journey as a passionate learner and creative developer.'
     },
-    {
-      name: 'robots',
-      content: 'index, follow'
-    },
   ],
   link: [
     {

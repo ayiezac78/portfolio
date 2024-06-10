@@ -17,10 +17,6 @@ useHead({
       name: 'description',
       content: 'Check out the features, code, and live demo of this innovative project. Showcasing my knowledge and skills in web development.'
     },
-    {
-      name: 'robots',
-      content: 'index, follow'
-    },
   ],
   link: [
     {

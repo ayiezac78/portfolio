@@ -57,10 +57,6 @@ useHead({
       name: 'description',
       content: 'As a tech starter in the tech industry, creating a portfolio website is an essential step for professionals in various fields to showcase their work and skills.'
     },
-    {
-      name: 'robots',
-      content: 'index, follow'
-    },
   ],
   link: [
     {

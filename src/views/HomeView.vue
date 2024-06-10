@@ -69,10 +69,6 @@ useHead({
       name: 'description',
       content: 'A Front-end Web Developer based in Philippines.'
     },
-    {
-      name: 'robots',
-      content: 'index, follow'
-    },
   ],
   link: [
     {
