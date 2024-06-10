@@ -82,7 +82,5 @@ watchEffect(() => {
   fetchData()
 });
 
-console.log(repoData);
-
 const formattedDate = (date) => format(new Date(date), 'MMMM dd, yyyy');
 </script>
