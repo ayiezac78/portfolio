@@ -8,8 +8,7 @@ import VueProgressBar from "@aacassandra/vue3-progressbar";
 import { createHead, CapoPlugin } from '@unhead/vue'
 import { useDark } from "@vueuse/core";
 import { computed } from "vue";
-import VueTippy from 'vue-tippy'
-import FloatingVue, { placements } from 'floating-vue'
+import FloatingVue from 'floating-vue'
 
 const isDark = useDark({
   selector: "html",
@@ -43,7 +42,6 @@ app.use(VueProgressBar, options)
 app.use(router);
 app.use(head);
 app.use(createPinia());
-app.use(VueTippy)
 app.use(FloatingVue, {
   shift: true,
   themes: {

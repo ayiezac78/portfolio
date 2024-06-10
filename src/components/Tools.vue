@@ -1,7 +1,6 @@
 <script setup>
 import { Icon } from '@iconify/vue';
 import { shallowRef } from "vue";
-import { Tippy } from 'vue-tippy'
 
 const toolsArr = [
 	{
