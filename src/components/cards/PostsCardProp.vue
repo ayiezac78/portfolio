@@ -1,7 +1,7 @@
 <template>
   <div class="flex items-center justify-between gap-x-3">
     <h2 class="text-md text-balance font-medium">{{ title }}</h2>
-    <small class="text-xs text-slate-500">{{ date_published }}</small>
+    <small class="text-xs text-slate-400">{{ date_published }}</small>
   </div>
   <!-- <p class="mt-2 line-clamp-3 text-xs/relaxed">
         {{ sypnosis }}

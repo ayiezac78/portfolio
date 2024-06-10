@@ -15,8 +15,8 @@
             <div class="song-title">
               <h2 class="font-semibold">{{ nowPlaying.title }}</h2>
             </div>
-            <p class="artist">{{ nowPlaying.artist }}</p>
-            <p class="text-xs">{{ nowPlaying.duration }}</p>
+            <p class="artist dark:text-slate-400 text-slate-500">{{ nowPlaying.artist }}</p>
+            <p class="text-xs dark:text-slate-400 text-slate-500">{{ nowPlaying.duration }}</p>
           </div>
         </div>
       </a>
