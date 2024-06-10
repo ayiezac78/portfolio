@@ -6,7 +6,8 @@
         rel="noreferrer noopener" :href="nowPlaying.songUrl">
         <div class="avatar">
           <div class=" w-16 rounded-full">
-            <img :src="nowPlaying.albumImageUrl" alt="Album Art" />
+            <Image layout="constrained" width="800" height="600" :src="nowPlaying.albumImageUrl" alt="Album Art"
+              background="auto" />
           </div>
         </div>
         <div class="player-controls">
@@ -31,6 +32,7 @@
 import { ref, onMounted, onUnmounted } from 'vue';
 import { getNowPlayingItem } from '@/api/spotify-api'
 import { Icon } from '@iconify/vue';
+import { Image } from '@unpic/vue';
 
 const nowPlaying = ref(null);
 
