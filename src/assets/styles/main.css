@@ -63,8 +63,12 @@ body {
   outline: 1px dotted red;
 } */
 
-html {
+* {
   scrollbar-gutter: stable both-edges;
+  scrollbar-color: unset !important;
+}
+
+html {
   color: var(--30-lightColor);
   background-color: var(--60-lightColor);
 
@@ -96,11 +100,6 @@ html {
   color-scheme: dark;
   background-color: var(--60-darkColor);
   color: var(--30-darkColor);
-
-  ::-webkit-scrollbar-thumb {
-    background: var(--10-lightColor);
-    border-radius: 5px;
-  }
 
   & .text-cta {
     color: var(--10-darkColor)
