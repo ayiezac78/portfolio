@@ -29,7 +29,7 @@ const mode = computed(() => (isDark.value ? "line-md:moon-filled-alt-to-sunny-fi
       </div>
       <div class="flex gap-x-2 items-center">
         <button type="button" aria-label="Toggle dark mode" v-tooltip="'Toggle Theme'" id="switch__mode"
-          @click="toggleDark()" class="swap swap-rotate">
+          @click="toggleDark()">
           <Icon :icon="mode" class="text-2xl" />
         </button>
         <a v-tooltip="'Email me'" href="mailto:admaniago01@gmail.com" aria-label="Email me">
