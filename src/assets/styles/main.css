@@ -65,7 +65,7 @@ body {
 
 
 html {
-  scrollbar-gutter: stable both-edges;
+  /* scrollbar-gutter: stable both-edges; */
   color: var(--30-lightColor);
   background-color: var(--60-lightColor);
 
