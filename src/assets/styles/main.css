@@ -29,21 +29,20 @@
     local('Helvetica Neue'),
     local('Arial'),
     local('Noto Sans');
-  ;
   ascent-override: 92.7734375%;
   descent-override: 24.4140625%;
   line-gap-override: 0%;
 }
 
 @font-face {
-  font-family: "Roboto Mono";
-  src: url("/fonts/RobotoMono-VariableFont_wght.ttf") format("truetype");
+  font-family: "Work Sans";
+  src: url("/fonts/WorkSans-VariableFont_wght.ttf") format("truetype");
   font-display: swap;
   font-optical-sizing: auto;
 }
 
 @font-face {
-  font-family: "Roboto Mono override";
+  font-family: "Work Sans override";
   src: local('Cascadia Code'),
     local('Source Code Pro'),
     local('Menlo'),
@@ -136,7 +135,7 @@ a,
 small,
 button,
 table {
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Work Sans', monospace;
 }
 
 tbody {
