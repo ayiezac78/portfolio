@@ -13,6 +13,7 @@
     "@aacassandra/vue3-progressbar": "^1.0.3",
     "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
     "@floating-ui/vue": "^1.0.6",
+    "@headlessui/vue": "^1.7.22",
     "@octokit/core": "^6.1.2",
     "@unhead/vue": "^1.9.10",
     "@unpic/placeholder": "^0.1.2",
