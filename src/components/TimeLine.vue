@@ -100,14 +100,15 @@
         </div>
       </div>
     </div>
-    <ModalTimeLine :show="isOpen" @close="closeModal" />
+    <Teleport to="body">
+      <ModalTimeLine v-if="closeModal" :show="isOpen" @close="closeModal" />
+    </Teleport>
   </div>
 </template>
 
 <script setup>
 import { Icon } from '@iconify/vue';
-import ModalTimeLine from './TimelineModal.vue';
-import { ref } from 'vue';
+import { defineAsyncComponent, ref } from 'vue';
 // import { useToggle } from '@vueuse/core';
 
 const isOpen = ref(false)
@@ -119,6 +120,8 @@ function closeModal() {
 function openModal() {
   isOpen.value = true
 }
+
+const ModalTimeLine = defineAsyncComponent(() => import('./TimelineModal.vue'))
 </script>
 
 <style scoped></style>

@@ -3,7 +3,7 @@
 
     <div v-if="error">{{ error }}</div>
 
-    <div v-for="(repo, index) in repoData" :key="index">
+    <div v-for="repo in repoData" :key="repo.id">
       <div v-if="isLoading">
         <SkeletonCardPlaceholder />
       </div>
